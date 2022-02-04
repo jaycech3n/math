@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=Source+Code+Pro:wght@500&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" href="assets/default.css">
+  {%- include custom-head.html -%}
+  <title>{{ page.title }}</title>
+</head>
+<body>
+  <header>
+    <!-- <h1>Blog title</h1> -->
+    <nav>
+        <!-- Some kind of index/pagination here -->
+    </nav>
+  </header>
+  <main>
+      {{ content }}
+  </main>
+  <script>
+    function moreless() {
+      var m = document.getElementsByClassName("moreless")
+      for (let p of m) {
+        if (p.style.display === "none") {p.style.display = "block"}
+        else {p.style.display = "none"}
+      }
+      var x = document.getElementById("togglemoreless")
+      if (x.innerHTML === "+") {
+        x.innerHTML = "−"
+      }
+      else {
+        x.innerHTML = "+"
+      }
+    }
+  </script>
+</body>
+</html>

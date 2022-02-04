@@ -1,13 +1,11 @@
-title: Krater
-email: paolo.brasolin+krater@gmail.com
+title: Math
+email: mail@joshchen.io
 description: >-
-  Krater is a template for math-intensive Jekyll websites.
+  Math and type theory notes
 baseurl: &baseurl "/math"
 url: "https://jaycech3n.github.io/"
-twitter_username: paolobrasolin
-github_username: paolobrasolin
-
-theme: minima
+twitter_username: jaycech3n
+github_username: jaycech3n
 
 markdown: kramdown
 kramdown:
@@ -17,7 +15,7 @@ kramdown:
 
 katex:
   macros:
-    "\\MyGlobalMacro": "\\LaTeX"
+    #"\\ExampleGlobalMacro": "\\LaTeX"
   delimiters:
     - { left: "$", right: "$", display: false }
     - { left: "$$", right: "$$", display: true }
@@ -52,3 +50,10 @@ exclude:
 
 include:
   - .nojekyll # tells GHP not to run Jekyll again on the build
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"

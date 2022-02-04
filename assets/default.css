@@ -1,0 +1,231 @@
+/******************************************************************************
+Fonts
+******************************************************************************/
+
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/Atkinson-Hyperlegible-400.woff2) format('woff2'),
+       url(fonts/Atkinson-Hyperlegible-400.woff)  format('woff')
+}
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  font-style: italic;
+  font-weight: normal;
+  src: url(fonts/Atkinson-Hyperlegible-400i.woff2) format('woff2'),
+       url(fonts/Atkinson-Hyperlegible-400i.woff)  format('woff')
+}
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  font-style: normal;
+  font-weight: bold;
+  src: url(fonts/Atkinson-Hyperlegible-700.woff2) format('woff2'),
+       url(fonts/Atkinson-Hyperlegible-700.woff)  format('woff')
+}
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  font-style: italic;
+  font-weight: bold;
+  src: url(fonts/Atkinson-Hyperlegible-700i.woff2) format('woff2'),
+       url(fonts/Atkinson-Hyperlegible-700i.woff)  format('woff')
+}
+
+
+/******************************************************************************
+Colors
+******************************************************************************/
+
+:root {
+  --font-color: #263543;
+  --bg-color: #fff;
+  --color1: #ffdc00;
+  --color2: #164fd1;
+  --color3: #00a6fb;
+  --color4: #47a8bd;
+  --attn-color: #c2095a;
+  --darken-color: #12121266;
+  --lighten-color: #ffffff33;
+}
+
+
+/******************************************************************************
+Top-level defaults
+******************************************************************************/
+
+html {
+  height: 100%;
+  width: 100%
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  font-family: "Atkinson-Hyperlegible", sans-serif;
+  font-size: 16px;
+  color: var(--font-color);
+
+  background-color: var(--bg-color)
+}
+
+a {
+  text-decoration: none;
+  transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s
+}
+
+body h1, h2, h3 {font-family: "Libre Baskerville", serif}
+
+code, pre {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.9em;
+}
+
+
+/******************************************************************************
+"Header" sidebar
+******************************************************************************/
+
+header {
+  min-width: 16.67%;
+  padding-right: 8ex
+}
+
+header h1 {
+  position: relative;
+  margin-left: 33%;
+  font-size: 1.8em;
+  padding-top: 0;
+  margin-top: 2rem;
+}
+
+nav {
+  position: relative;
+  margin-left: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+
+nav a {
+  text-transform: uppercase;
+  color: var(--color2);
+  padding: 2px 4px 0px 4px
+}
+
+nav a:hover,
+nav a:focus,
+nav a:active {
+  color: var(--bg-color);
+  background-color: var(--color2);
+  border-radius: 2px;
+  transform: scale(1.05);
+  box-shadow: 2px 2px 4px var(--darken-color)
+}
+
+nav a + a {margin-top: 4px}
+
+
+/******************************************************************************
+Main content
+******************************************************************************/
+
+main {
+  max-width: 42em;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 2ex;
+  padding-bottom: 4em;
+  line-height: 1.5em
+}
+
+main a {
+  color: var(--font-color);
+  box-shadow: 0px 3px 4px -4px var(--darken-color)
+}
+
+main a:hover,
+main a:focus,
+main a:active {
+  border-radius: 2px;
+  box-shadow: 2px 2px 4px var(--darken-color)
+}
+
+main h1 {
+  font-size: 2em;
+  margin-bottom: 1em
+}
+main h2 {font-size: 1.4em}
+main h3 {font-size: 1em}
+
+p + h2 {margin-top: 1.5em}
+
+/******************************************************************************
+Misc. specific styling
+******************************************************************************/
+
+.tag {
+  padding: 3px 4px;
+  border-radius: 4px;
+  color: var(--bg-color);
+  background-color: var(--font-color);
+  vertical-align: middle;
+  box-shadow: 0px 3px 4px -4px var(--darken-color)
+}
+p .tag {
+  font-size: 0.75em;
+  position: relative;
+  bottom: 0px;
+}
+
+/* .tag.research {background-color: var(--color2)}
+.tag.abstract {background-color: var(--color4)}
+.tag.thesis   {background-color: var(--darken-color)} */
+
+.less {display: none}
+.more {display: inline}
+#togglemoreless:hover {cursor: pointer}
+
+
+/******************************************************************************
+Responsive
+******************************************************************************/
+
+.show-on-responsive {display: none}
+
+@media screen and (max-width: 960px) {
+  body {flex-direction: column}
+  ol, ul {padding-left: 5ex}
+  header, main {padding-left: 3ex}
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 5ex;
+  }
+  header h1 {margin-left: 0}
+  nav {
+    margin-left: 0;
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: left
+  }
+  nav a {margin-right: 1ex}
+}
+
+@media screen and (max-width: 800px) {
+  .show-on-responsive {display: inline}
+  .hide-on-responsive {display: none}
+  header {padding-right: 2ex}
+  header h1 {padding-right: 2ex}
+  main {padding-left: 2ex}
+}
