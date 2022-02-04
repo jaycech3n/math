@@ -5,7 +5,7 @@ katex:
     "\\Iex": "\\mathcal{I}_{\\preceq x}"
 antex:
   preamble: >-
-    \usepackage{amsmath, amsfonts, mathtools, stmaryrd}
+    \usepackage{amsmath, amsfonts, mathtools, stmaryrd, tikz-cd}
     \newcommand{\Ix}{\mathcal{I}_{\prec x}}
     \newcommand{\Iex}{\mathcal{I}_{\preceq x}}
     \newcommand{\ssl}{\!\sslash\!}
@@ -15,16 +15,14 @@ title:
 
 # Reedy fibrations
 
-The first part of this writeup mostly follows {% TODO: cite Shulman %}.
-
-**Note.**
-There's quite likely not so much in here that can't already be found in the nLab; what you'll get, however, perhaps, is a slightly idiosyncratic personal touch and a curious mix of mathematical and type theoretic settings.
+The first part of this exposition mostly follows {% cite shulman:univalence:14 %}.
 
 **Notation.**
 We denote "$x$ (is) an object of $\mathcal C$" variously by $x \in \mathcal C$ or $x \in \mathrm{ob}(\mathcal C)$.
 Similarly, "$f$ (is) an arrow of $\mathcal C$" may be denoted $f \in \mathcal C$ or $f \in \mathrm{mor}(\mathcal C)$, but we shall be careful to always disambiguate with the latter notation if there is a danger of confusion.
 
 {% TODO: write a conventions file %}
+
 
 ## Inverse categories
 
@@ -47,6 +45,7 @@ Equivalently, an inverse category $\mathcal I$ is one for which there is an ordi
 For an inverse category $\mathcal I$ and $x \in \mathcal I$, the **$x$-truncated category $\Ix$** is the full subcategory of $\mathcal I$ on objects $y \prec x$.
 We also use $\Iex$ to denote the full subcategory on $\Ix \cup \\{x\\}$, but do not bother to give it a name.
 
+
 ## Diagrams on inverse categories
 
 **Notation.**
@@ -63,7 +62,7 @@ By unfolding definitions, we can see that (the data of) extensions of $A_{\prec 
   A_{\preceq x} \colon \Iex \rightarrow \mathcal C
 \\]
 are equivalently cones over
-{% tex classes: [antex, display] %}
+{% tex classes: [antex,display] %}
 $
   A_{\prec x} \circ U \colon x \ssl \mathcal \mathcal I \rightarrow \mathcal C,
 $
@@ -79,7 +78,42 @@ The **matching object $M_xA$ (of $A$, on "level" $x$)** is the limit
 \\[ M_xA \coloneqq \lim(A_{\prec x} \circ U), \\]
 if it exists.
 
-To summarize, if the $x$-matching object for $A_{\prec x}$ exists, we can extend $A_{\prec x}$ to $x$ by simply giving an object $A_x$ and a map $A_x \rightarrow M_xA$ in $\mathcal I$.
+Thus, if the $x$-matching object for $A_{\prec x}$ exists, we can extend $A_{\prec x}$ to $x$ by simply giving an object $A_x$ and a map $A_x \rightarrow M_xA$ in $\mathcal I$.
 
-Now let's consider extensions of maps between inverse diagrams.
-Given $A_{\preceq x}, B_{\preceq x} \colon \Iex \rightarrow \mathcal C$, {% TODO: continue %}
+Now we consider extensions of maps between inverse diagrams.
+Suppose that
+$A_{\preceq x},\ B_{\preceq x} \colon \Iex \rightarrow \mathcal C$
+have $x$-matching objects $M\_xA,\ M_xB$, and that
+$f_{\prec x} \colon A_{\prec x} \rightarrow B_{\prec x}$
+is a natural transformation restricted to the respective $x$-truncations.
+Then we can again check that extensions of $f_{\prec x}$ to maps
+\\[
+  f_{\preceq x} \colon A_{\preceq x} \rightarrow B_{\preceq x}
+\\]
+are equivalently lids of the square
+{% tex classes: [antex,display] %}
+\begin{tikzcd}
+  A_x \ar[d] \ar[r, dashrightarrow] \ar[dr, phantom, "\circ" marking] & B_x \ar[d] \\
+  M_xA \ar[r]                  & M_xB
+\end{tikzcd}
+{% endtex %}
+(where the walls and base are the evident arrows), which are equivalently arrows
+\\[
+  A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x
+\\]
+such that
+{% tex classes: [antex,display] %}
+\begin{tikzcd}[row sep=small, column sep=tiny]
+  A_x \ar[dd] \ar[dr, "f_x"] & \\
+                             & M_xA \times_{M_xB} B_x \ar[dl] \\
+  M_xA                       & 
+\end{tikzcd}
+{% endtex %}
+commutes, assuming that the pullback exists.
+
+{% TODO: Define Reedy fibrations and Reedy fibrant diagrams; need the notion of a fibration first %}
+
+
+### References
+
+{% bibliography --cited %}

@@ -13,10 +13,15 @@
 </head>
 <body>
   <header>
-    <nav><a href="{{ site.baseurl }}">Back to index</a></nav>
+    <nav><a href="{{ site.url }}">Home</a></nav>
   </header>
   <main>
-      {{ content }}
+    {{ content }}
+    <ul class="notes">
+    {% for note in site.notes %}
+      <li><a href="{{ note.url | relative_url }}">{{ note.title }}</a></li>
+    {% endfor %}
+    </ul>
   </main>
 </body>
 </html>

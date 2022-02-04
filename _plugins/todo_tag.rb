@@ -7,7 +7,7 @@ module Jekyll
     end
 
     def render(context)
-      "<span class=\"tag\"><strong>TODO</strong>#{@text}</span>" # style .tag in any available css
+      "<span class=\"todo tag\"><strong>TODO</strong>#{@text}</span>" # style .tag in any available css
     end
   end
 end

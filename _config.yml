@@ -3,7 +3,7 @@ email: mail@joshchen.io
 description: >-
   Math and type theory notes
 baseurl: &baseurl "/math"
-url: "https://jaycech3n.github.io/"
+url: "https://joshchen.io/"
 twitter_username: jaycech3n
 github_username: jaycech3n
 
@@ -31,11 +31,13 @@ antex:
 
 plugins:
   - jekyll-feed
+  - jekyll-scholar
 
 exclude:
   # non default values:
   - README.md
   - krater.png
+  - bak
   # default values:
   - .sass-cache/
   - .jekyll-cache/
@@ -57,3 +59,8 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+
+collections:
+  notes:
+    output: true
+    permalink: :name

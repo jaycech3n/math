@@ -60,8 +60,7 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
-  min-height: 100%;
+  padding: 2em 0 0 0;
 
   display: flex;
   flex-direction: row;
@@ -73,7 +72,7 @@ body {
   background-color: var(--bg-color)
 }
 
-a {
+a, .tag {
   text-decoration: none;
   transition-duration: 0.1s;
   -moz-transition-duration: 0.1s;
@@ -160,12 +159,45 @@ main a:active {
 
 main h1 {
   font-size: 2em;
+  margin-top: 0;
   margin-bottom: 1em
 }
 main h2 {font-size: 1.4em}
-main h3 {font-size: 1em}
+main h3 {font-size: 1.1em}
 
 p + h2 {margin-top: 1.5em}
+
+ul.notes {
+  padding: 0;
+  list-style: none;
+}
+
+ul.notes li::before {
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  content: "🙢";
+  margin-right: 2ex;
+}
+
+/******************************************************************************
+Post reference lists
+******************************************************************************/
+
+h3#references {
+  margin-top: 2.25em;
+  padding-top: 0.75em;
+  box-shadow: 0px -2px 4px -4px var(--darken-color)
+}
+
+
+/******************************************************************************
+antex styling
+******************************************************************************/
+
+.antex.display img {
+  padding-top: 0.5em;
+  padding-bottom: 1em
+}
+
 
 /******************************************************************************
 Misc. specific styling
@@ -183,6 +215,15 @@ p .tag {
   font-size: 0.75em;
   position: relative;
   bottom: 0px;
+}
+
+.tag.todo {
+  background-color: var(--attn-color);
+  opacity: 33%
+}
+.tag.todo:hover {
+  opacity: 100%;
+  cursor: default
 }
 
 /* .tag.research {background-color: var(--color2)}

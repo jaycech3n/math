@@ -1,0 +1,85 @@
+I"�<h1 id="reedy-fibrations">Reedy fibrations</h1>
+
+<p>The first part of this exposition mostly follows <a class="citation" href="#shulman:univalence:14">(Shulman, 2014)</a>.</p>
+
+<p><strong>Notation.</strong>
+We denote “$x$ (is) an object of $\mathcal C$” variously by $x \in \mathcal C$ or $x \in \mathrm{ob}(\mathcal C)$.
+Similarly, “$f$ (is) an arrow of $\mathcal C$” may be denoted $f \in \mathcal C$ or $f \in \mathrm{mor}(\mathcal C)$, but we shall be careful to always disambiguate with the latter notation if there is a danger of confusion.</p>
+
+<p><span class="todo tag"><strong>TODO</strong>: write a conventions file </span></p>
+
+<h2 id="inverse-categories">Inverse categories</h2>
+
+<p><strong>Definition.</strong>
+A binary relation $\prec$ may be placed on the collection of objects of any category $\mathcal C$ by defining $y \prec x$ if and only if there is an arrow $x \rightarrow y$ in $\mathcal C$.
+An <strong>inverse category</strong> $\mathcal I$ is one for which $\prec$ is well-founded.</p>
+
+<p>Given an inverse category $\mathcal I$, we can define the <strong>degree</strong> aka <strong>rank $\rho(x)$ of an object $x$</strong> of $\mathcal I$ by well-founded recursion in the usual way:
+\[
+  \rho(x) \coloneqq \sup_{y \, \prec \, x} \big( \rho(y) + 1 \big).
+\]
+The <strong>rank $\rho(\mathcal I)$ of $\mathcal I$</strong> itself is then
+\[
+  \rho(\mathcal I) \coloneqq \sup_{x \, \in \, \mathcal I} \big( \rho(x) + 1 \big).
+\]</p>
+
+<p>Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree—$\rho(y) &lt; \rho(x)$.</p>
+
+<p><strong>Definition.</strong>
+For an inverse category $\mathcal I$ and $x \in \mathcal I$, the <strong>$x$-truncated category $\Ix$</strong> is the full subcategory of $\mathcal I$ on objects $y \prec x$.
+We also use $\Iex$ to denote the full subcategory on $\Ix \cup \{x\}$, but do not bother to give it a name.</p>
+
+<h2 id="diagrams-on-inverse-categories">Diagrams on inverse categories</h2>
+
+<p><strong>Notation.</strong>
+For a category $\mathcal C$ and $x \in \mathcal C$, let
+<span class="antex"><img data-antex="1241f59644059c50db09662e4b4c5d85" src="/math/antex/1241f59644059c50db09662e4b4c5d85.svg" /></span>
+denote the full subcategory of $x/\mathcal C$ without the object $\mathrm{1}_x \colon x \rightarrow x$.</p>
+
+<p>Note that for inverse $\mathcal I$ and any $x \in \mathcal I$ there is the canonical “codomain” forgetful functor
+<span class="antex"><img data-antex="7f662ac03fb849eed175d1fc4c361ede" src="/math/antex/7f662ac03fb849eed175d1fc4c361ede.svg" /></span>.</p>
+
+<p>Now suppose we’re given a category $\mathcal C$, an inverse category $\mathcal I$ and a diagram $A_{\prec x} \colon \mathcal{I}_{\prec x} \rightarrow \mathcal C$ on the truncated inverse category.
+By unfolding definitions, we can see that (the data of) extensions of $A_{\prec x}$ to a diagram
+\[
+  A_{\preceq x} \colon \Iex \rightarrow \mathcal C
+\]
+are equivalently cones over
+<span class="antex display"><img data-antex="9724d61653d42b433424b2fee6705048" src="/math/antex/9724d61653d42b433424b2fee6705048.svg" /></span>
+which are equivalently maps into
+\[ \lim(A_{\prec x} \circ U), \]
+provided this limit exists.</p>
+
+<p><span class="todo tag"><strong>TODO</strong>: insert cone diagram here </span></p>
+
+<p><strong>Definition.</strong> Suppose we have a category $\mathcal C$, inverse category $\mathcal I$ and diagram $A \colon \mathcal J \rightarrow \mathcal C$ where $\mathcal J \subseteq \mathcal I$ is a subcategory containing $\Ix$.
+The <strong>matching object $M_xA$ (of $A$, on “level” $x$)</strong> is the limit
+\[ M_xA \coloneqq \lim(A_{\prec x} \circ U), \]
+if it exists.</p>
+
+<p>Thus, if the $x$-matching object for $A_{\prec x}$ exists, we can extend $A_{\prec x}$ to $x$ by simply giving an object $A_x$ and a map $A_x \rightarrow M_xA$ in $\mathcal I$.</p>
+
+<p>Now we consider extensions of maps between inverse diagrams.
+Suppose that
+$A_{\preceq x},\ B_{\preceq x} \colon \Iex \rightarrow \mathcal C$
+have $x$-matching objects $M_xA,\ M_xB$, and that
+$f_{\prec x} \colon A_{\prec x} \rightarrow B_{\prec x}$
+is a natural transformation restricted to the respective $x$-truncations.
+Then we can again check that extensions of $f_{\prec x}$ to maps
+\[
+  f_{\preceq x} \colon A_{\preceq x} \rightarrow B_{\preceq x}
+\]
+are equivalently lids of the square
+<span class="antex display"><img data-antex="944d6c2afcfd630ac3add9c369c19453" src="/math/antex/944d6c2afcfd630ac3add9c369c19453.svg" /></span>
+(where the walls and base are the evident arrows), which are equivalently arrows
+\[
+  A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x
+\]
+such that
+<span class="antex display"><img data-antex="a30853337744d3125121a0c24bd5609b" src="/math/antex/a30853337744d3125121a0c24bd5609b.svg" /></span>
+commutes, assuming that the pullback exists.</p>
+
+<h3 id="references">References</h3>
+
+<ol class="bibliography"><li><span id="shulman:univalence:14">Shulman, M. (2014). Univalence for inverse diagrams and homotopy canonicity. <i>Mathematical Structures in Computer Science</i>, <i>25</i>(5), 1203–1277. https://doi.org/10.1017/s0960129514000565</span></li></ol>
+:ET
