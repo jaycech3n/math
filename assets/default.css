@@ -136,7 +136,7 @@ Main content
 ******************************************************************************/
 
 main {
-  max-width: 42em;
+  max-width: 45em;
   margin-top: 0;
   padding-top: 0;
   padding-left: 0;
@@ -167,14 +167,19 @@ main h3 {font-size: 1.1em}
 
 p + h2 {margin-top: 1.5em}
 
+p + ul {
+  margin-top: -0.5em;
+  padding-left: 4ex;
+}
+
 ul.notes {
   padding: 0;
-  list-style: none;
+  list-style: none
 }
 
 ul.notes li::before {
   font-family: 'Noto Sans Symbols 2', sans-serif;
-  content: "🙢";
+  content: "🙝";
   margin-right: 2ex;
 }
 
@@ -200,6 +205,64 @@ antex styling
 
 
 /******************************************************************************
+Theorem labels
+******************************************************************************/
+
+.theorem     .type,
+.lemma       .type,
+.proposition .type,
+.definition  .type,
+.notation    .type {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.theorem     .desc,
+.lemma       .desc,
+.proposition .desc,
+.definition  .desc,
+.notation    .desc {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.theorem     .desc::first-letter,
+.lemma       .desc::first-letter,
+.proposition .desc::first-letter,
+.definition  .desc::first-letter,
+.notation    .desc::first-letter {
+  text-transform: capitalize;
+}
+
+.theorem     .desc::before,
+.lemma       .desc::before,
+.proposition .desc::before,
+.definition  .desc::before,
+.notation    .desc::before {
+  content: " (";
+  font-style: normal;
+}
+
+.theorem     .desc::after,
+.lemma       .desc::after,
+.proposition .desc::after,
+.definition  .desc::after,
+.notation    .desc::after {
+  content: ")";
+  font-style: normal;
+}
+
+.theorem::after,
+.lemma::after,
+.proposition::after,
+.definition::after,
+.notation::after {
+  content: ".";
+  font-weight: bold;
+}
+
+
+/******************************************************************************
 Misc. specific styling
 ******************************************************************************/
 
@@ -209,30 +272,33 @@ Misc. specific styling
   color: var(--bg-color);
   background-color: var(--font-color);
   vertical-align: middle;
-  box-shadow: 0px 3px 4px -4px var(--darken-color)
+  box-shadow: 0px 3px 4px -4px var(--darken-color);
+  font-size: 0.75em
 }
 p .tag {
-  font-size: 0.75em;
   position: relative;
   bottom: 0px;
 }
 
 .tag.todo {
+  font-weight: bold;
   background-color: var(--attn-color);
+  box-shadow: 0px 4px 4px -4px var(--attn-color);
   opacity: 33%
 }
-.tag.todo:hover {
+
+.tag.todo:hover,
+.tag.todo:focus,
+.tag.todo:active {
   opacity: 100%;
-  cursor: default
+  cursor: pointer;
 }
 
-/* .tag.research {background-color: var(--color2)}
-.tag.abstract {background-color: var(--color4)}
-.tag.thesis   {background-color: var(--darken-color)} */
-
-.less {display: none}
-.more {display: inline}
-#togglemoreless:hover {cursor: pointer}
+.tag.todo:hover::after,
+.tag.todo:focus::after,
+.tag.todo:active::after {
+  content: "—" attr(data-text);
+}
 
 
 /******************************************************************************
