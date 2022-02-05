@@ -242,17 +242,19 @@ Responsive
 .show-on-responsive {display: none}
 
 @media screen and (max-width: 960px) {
-  body {flex-direction: column}
+  body {
+    padding-top: 1em;
+    flex-direction: column
+  }
   ol, ul {padding-left: 5ex}
   header, main {padding-left: 3ex}
   header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
     padding-right: 5ex;
   }
-  header h1 {margin-left: 0}
   nav {
     margin-left: 0;
     flex-direction: row;
@@ -261,12 +263,12 @@ Responsive
     justify-content: left
   }
   nav a {margin-right: 1ex}
+  main h1 {margin-top: 1em}
 }
 
 @media screen and (max-width: 800px) {
   .show-on-responsive {display: inline}
   .hide-on-responsive {display: none}
   header {padding-right: 2ex}
-  header h1 {padding-right: 2ex}
-  main {padding-left: 2ex}
+  header, main {padding-left: 2ex}
 }
