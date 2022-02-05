@@ -5,7 +5,7 @@ katex:
     "\\Iex": "\\mathcal{I}_{\\preceq x}"
 antex:
   preamble: >-
-    \usepackage{amsmath,amsfonts,mathtools,stmaryrd,tikz-cd, bbm}
+    \usepackage{amsmath,amsfonts,mathtools,stmaryrd,tikz-cd,bbm}
     \newcommand{\Ix}{\mathcal{I}_{\prec x}}
     \newcommand{\Iex}{\mathcal{I}_{\preceq x}}
     \newcommand{\coslicecat}[2]{\vphantom{x}^{#1/\!}#2}
