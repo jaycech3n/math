@@ -16,12 +16,13 @@ title:
 
 # Reedy fibrations
 
-The first part of this note mostly follows {%cite shulman:univalence:14%}.
+The first part of this explainer mostly follows {%cite shulman:univalence:14%}.
 
 A brief word on **Notation.**
 - We denote "$x$ (is) an object of $\mathcal C$" variously by $x \in \mathcal C$ or $x \in \mathrm{ob}(\mathcal C)$.
 Similarly, "$f$ (is) an arrow of $\mathcal C$" may be denoted $f \in \mathcal C$ or $f \in \mathrm{mor}(\mathcal C)$, but we shall be careful to always disambiguate with the latter notation if there is a danger of confusion.
-- We also occasionally mix the use of $\in$ and $\colon$, especially when speaking of anything that may be interpreted as arrows in some category. When this occurs outside of an explicitly type theoretic context, one may feel free to mentally substitute the less comfortable notation for the other.
+- We also occasionally mix the use of $\in$ and $\colon$, especially when speaking of anything that may be interpreted as an arrow of some category.
+When this occurs outside of an explicitly type theoretic context, one should feel free to mentally substitute the more comfortable notation for the other.
 
 {%TODO collect notational conventions on a single page?%}
 
@@ -110,32 +111,39 @@ are equivalently lids of the square
 {%endtex%}
 (where the walls and base are the evident arrows), which are equivalently arrows
 \\[
-  A_x \xrightarrow{f} M_xA \times_{M_xB} B_x
+  A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x
 \\]
 such that
 {%tex classes: [antex,display]%}
 \begin{tikzcd}[row sep=small, column sep=tiny]
-  A_x \ar[dd] \ar[dr, "f"] & \\
+  A_x \ar[dd] \ar[dr, "f_x"] & \\
                              & M_xA \times_{M_xB} B_x \ar[dl] \\
   M_xA                       & 
 \end{tikzcd}
 {%endtex%}
 commutes, provided that the pullback exists.
 
-In this way, the matching objects $M_xA$ and pullbacks $M_xA \times_{M_xB} B_x$ allow us to uniformly package up levelwise presentations of (certain) inverse diagrams and maps between them.
+To summarize: if an inverse diagram $A \colon \mathcal{C}^{\mathcal I}$ has all matching objects, then it has a simple and uniform recursive description in terms of maps into $M_xA$ for all $x \in \mathcal I$ (note that $M_xA$ is always terminal for $\prec$-minimal $x$).
+Similarly, maps between inverse diagrams $A$, $B$ with all matching objects also have a uniform description in terms of maps
+$A \rightarrow M_xA \times_{M_xB} B_x$
+{%TODO write plugin for equation labels + referencing%},
+assuming the pullback exists in $\mathcal C$.
+
+Part of the appeal of these properties is that they suggest the possibility of encoding, for fixed $\mathcal I$, the type of such $\mathcal I$-diagrams and maps between them (possibly subject to additional conditions).
+We'll come back to discuss this idea soon.
 
 Recall the definition of a *type-theoretic fibration category* {%cite shulman:univalence:14 -L definition -l 2.1%}.
 In particular, these are equipped with a terminal object
 {%tex%}$\mathbbm 1${%endtex%}
-and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of *fibrations* (containing all terminal arrows and isomorphisms, closed under pullbacks, etc.) interpreting types in context.
+and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of *fibrations* (containing all terminal arrows and isomorphisms, closed under pullbacks, etc.) interpreting types-in-context.
 
-{%definition Reedy fibration, Reedy-fibrant-diagram%}
+{%definition Reedy fibration, Reedy fibrant diagram%}
 Let $\mathcal C$ be a type theoretic fibration category and $\mathcal I$ an inverse category.
 A *Reedy fibration* $f \colon A \rightarrow B$ between diagrams $A,\ B \colon \mathcal{C}^{\mathcal I}$ is one where:
 - $A$ and $B$ have all matching objects,
-- for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists, and the map $A_x \xrightarrow{f} M_xA \times_{M_xB} B_x$ discussed above is a fibration.
+- for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed above is a fibration.
 
-A *Reedy-fibrant diagram* $A \colon \mathcal{C}^{\mathcal I}$ is, as expected, one for which the terminal arrow
+A *Reedy fibrant diagram* $A \colon \mathcal{C}^{\mathcal I}$ is one for which the terminal arrow
 {%tex%}$A \rightarrow \Delta_\mathbbm{1}${%endtex%}
 is a Reedy fibration.
 Equivalently, it's one with all matching objects and such that $A_x \rightarrow M_xA$ is a fibration for all $x$.
@@ -144,7 +152,7 @@ Note that the terminal diagram
 is itself Reedy fibrant.
 
 
-## Reedy fibrant inverse diagrams in type theory
+## Type-valued Reedy fibrant diagrams
 
 {%TODO Present Reedy fibrant diagrams type theoretically%}
 

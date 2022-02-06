@@ -1,12 +1,13 @@
-I"�!<h1 id="reedy-fibrations">Reedy fibrations</h1>
+I"$<h1 id="reedy-fibrations">Reedy fibrations</h1>
 
-<p>The first part of this note mostly follows <a class="citation" href="#shulman:univalence:14">(Shulman, 2014)</a>.</p>
+<p>The first part of this explainer mostly follows <a class="citation" href="#shulman:univalence:14">(Shulman, 2014)</a>.</p>
 
 <p>A brief word on <strong>Notation.</strong></p>
 <ul>
   <li>We denote “$x$ (is) an object of $\mathcal C$” variously by $x \in \mathcal C$ or $x \in \mathrm{ob}(\mathcal C)$.
 Similarly, “$f$ (is) an arrow of $\mathcal C$” may be denoted $f \in \mathcal C$ or $f \in \mathrm{mor}(\mathcal C)$, but we shall be careful to always disambiguate with the latter notation if there is a danger of confusion.</li>
-  <li>We also occasionally mix the use of $\in$ and $\colon$, especially when speaking of anything that may be interpreted as arrows in some category. When this occurs outside of an explicitly type theoretic context, one may feel free to mentally substitute the less comfortable notation for the other.</li>
+  <li>We also occasionally mix the use of $\in$ and $\colon$, especially when speaking of anything that may be interpreted as an arrow of some category.
+When this occurs outside of an explicitly type theoretic context, one should feel free to mentally substitute the more comfortable notation for the other.</li>
 </ul>
 
 <p><span class="todo tag" data-text="collect notational conventions on a single page?" tabindex="0">TODO</span></p>
@@ -77,28 +78,35 @@ are equivalently lids of the square
 <span class="antex display"><img data-antex="da54d0c7f813d55cc2063698da587375" src="/math/antex/da54d0c7f813d55cc2063698da587375.svg" /></span>
 (where the walls and base are the evident arrows), which are equivalently arrows
 \[
-  A_x \xrightarrow{f} M_xA \times_{M_xB} B_x
+  A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x
 \]
 such that
-<span class="antex display"><img data-antex="31bf65ef9837029fb7cf81151161411d" src="/math/antex/31bf65ef9837029fb7cf81151161411d.svg" /></span>
+<span class="antex display"><img data-antex="d2609b105add3b08f108305b9c374619" src="/math/antex/d2609b105add3b08f108305b9c374619.svg" /></span>
 commutes, provided that the pullback exists.</p>
 
-<p>In this way, the matching objects $M_xA$ and pullbacks $M_xA \times_{M_xB} B_x$ allow us to uniformly package up levelwise presentations of (certain) inverse diagrams and maps between them.</p>
+<p>To summarize: if an inverse diagram $A \colon \mathcal{C}^{\mathcal I}$ has all matching objects, then it has a simple and uniform recursive description in terms of maps into $M_xA$ for all $x \in \mathcal I$ (note that $M_xA$ is always terminal for $\prec$-minimal $x$).
+Similarly, maps between inverse diagrams $A$, $B$ with all matching objects also have a uniform description in terms of maps
+$A \rightarrow M_xA \times_{M_xB} B_x$,
+assuming the pullback exists in $\mathcal C$.
+<span class="todo tag" data-text="write plugin for equation labels + referencing" tabindex="0">TODO</span></p>
+
+<p>Part of the appeal of these properties is that they suggest the possibility of encoding, for fixed $\mathcal I$, a type of such $\mathcal I$-diagrams and maps between them (possibly subject to additional conditions).
+We’ll come back to this idea soon.</p>
 
 <p>Recall the definition of a <em>type-theoretic fibration category</em> <a class="citation" href="#shulman:univalence:14">(Shulman, 2014, 2.1)</a>.
 In particular, these are equipped with a terminal object
 <span class="antex"><img data-antex="43bfb871712d55fdbd135346b2006a5c" src="/math/antex/43bfb871712d55fdbd135346b2006a5c.svg" /></span>
-and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of <em>fibrations</em> (containing all terminal arrows and isomorphisms, closed under pullbacks, etc.) interpreting types in context.</p>
+and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of <em>fibrations</em> (containing all terminal arrows and isomorphisms, closed under pullbacks, etc.) interpreting types-in-context.</p>
 
-<p><span class="definition" id="reedy-fibration--reedy-fibrant-diagram"><span class="type">definition</span><span class="desc">Reedy fibration, Reedy-fibrant-diagram</span></span>
+<p><span class="definition" id="reedy-fibration--reedy-fibrant-diagram"><span class="type">definition</span><span class="desc">Reedy fibration, Reedy fibrant diagram</span></span>
 Let $\mathcal C$ be a type theoretic fibration category and $\mathcal I$ an inverse category.
 A <em>Reedy fibration</em> $f \colon A \rightarrow B$ between diagrams $A,\ B \colon \mathcal{C}^{\mathcal I}$ is one where:</p>
 <ul>
   <li>$A$ and $B$ have all matching objects,</li>
-  <li>for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists, and the map $A_x \xrightarrow{f} M_xA \times_{M_xB} B_x$ discussed above is a fibration.</li>
+  <li>for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed above is a fibration.</li>
 </ul>
 
-<p>A <em>Reedy-fibrant diagram</em> $A \colon \mathcal{C}^{\mathcal I}$ is, as expected, one for which the terminal arrow
+<p>A <em>Reedy fibrant diagram</em> $A \colon \mathcal{C}^{\mathcal I}$ is one for which the terminal arrow
 <span class="antex"><img data-antex="8ba8accefc52391da7e0d3aeeb664bd4" src="/math/antex/8ba8accefc52391da7e0d3aeeb664bd4.svg" /></span>
 is a Reedy fibration.
 Equivalently, it’s one with all matching objects and such that $A_x \rightarrow M_xA$ is a fibration for all $x$.
@@ -106,7 +114,7 @@ Note that the terminal diagram
 <span class="antex"><img data-antex="4a9ef8222879b3c901864a074590b263" src="/math/antex/4a9ef8222879b3c901864a074590b263.svg" /></span>
 is itself Reedy fibrant.</p>
 
-<h2 id="reedy-fibrant-inverse-diagrams-in-type-theory">Reedy fibrant inverse diagrams in type theory</h2>
+<h2 id="type-valued-reedy-fibrant-diagrams">Type-valued Reedy fibrant diagrams</h2>
 
 <p><span class="todo tag" data-text="Present Reedy fibrant diagrams type theoretically" tabindex="0">TODO</span></p>
 
