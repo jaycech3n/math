@@ -185,7 +185,7 @@ ul.notes li::before {
 }
 
 /******************************************************************************
-Post reference lists
+Reference lists
 ******************************************************************************/
 
 h3#references {
@@ -206,6 +206,14 @@ antex styling
 
 
 /******************************************************************************
+Section labels
+******************************************************************************/
+
+.section > .numbering {margin-right: 1ex}
+.section > .numbering::after {content: "."}
+
+
+/******************************************************************************
 Theorem labels
 ******************************************************************************/
 
@@ -213,16 +221,28 @@ Theorem labels
 .lemma       .type,
 .proposition .type,
 .definition  .type,
-.notation    .type {
+.notation    .type,
+.remark      .type {
   font-weight: bold;
   text-transform: capitalize;
+}
+
+.theorem     .numbering,
+.lemma       .numbering,
+.proposition .numbering,
+.definition  .numbering,
+.notation    .numbering,
+.remark      .numbering {
+  margin-left: 0.5ex;
+  font-weight: bold;
 }
 
 .theorem     .desc,
 .lemma       .desc,
 .proposition .desc,
 .definition  .desc,
-.notation    .desc {
+.notation    .desc,
+.remark      .desc {
   font-weight: normal;
   font-style: italic;
 }
@@ -231,7 +251,8 @@ Theorem labels
 .lemma       .desc::first-letter,
 .proposition .desc::first-letter,
 .definition  .desc::first-letter,
-.notation    .desc::first-letter {
+.notation    .desc::first-letter,
+.remark      .desc::first-letter {
   text-transform: capitalize;
 }
 
@@ -239,7 +260,8 @@ Theorem labels
 .lemma       .desc::before,
 .proposition .desc::before,
 .definition  .desc::before,
-.notation    .desc::before {
+.notation    .desc::before,
+.remark      .desc::before {
   content: " (";
   font-style: normal;
 }
@@ -248,7 +270,8 @@ Theorem labels
 .lemma       .desc::after,
 .proposition .desc::after,
 .definition  .desc::after,
-.notation    .desc::after {
+.notation    .desc::after,
+.remark      .desc::after {
   content: ")";
   font-style: normal;
 }
@@ -257,10 +280,31 @@ Theorem labels
 .lemma::after,
 .proposition::after,
 .definition::after,
-.notation::after {
+.notation::after,
+.remark::after {
   content: ".";
   font-weight: bold;
 }
+
+.equation {
+  float: right;
+  position: relative;
+  top: -2.5em
+}
+
+.equation .type,
+.equation .desc {display: none}
+
+.equation .numbering::before {content: "("}
+.equation .numbering::after {content: ")"}
+
+
+/******************************************************************************
+In-text reference labels
+******************************************************************************/
+
+.ref::before {content: "("}
+.ref::after {content: ")"}
 
 
 /******************************************************************************
@@ -288,6 +332,8 @@ p .tag {
   opacity: 33%
 }
 
+.tag.todo > span {text-transform: uppercase}
+
 .tag.todo:hover,
 .tag.todo:focus,
 .tag.todo:active {
@@ -298,7 +344,7 @@ p .tag {
 .tag.todo:hover::after,
 .tag.todo:focus::after,
 .tag.todo:active::after {
-  content: "—" attr(data-text);
+  content: attr(data-text);
 }
 
 
