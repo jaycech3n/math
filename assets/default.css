@@ -165,7 +165,8 @@ main h1 {
 main h2 {font-size: 1.4em}
 main h3 {font-size: 1.1em}
 
-p + h2 {margin-top: 1.5em}
+p + h2,
+div.block + h2 {margin-top: 1.5em}
 
 p + ul {
   margin-top: -0.5em;
@@ -217,71 +218,36 @@ Section labels
 Theorem labels
 ******************************************************************************/
 
-.theorem     .type,
-.lemma       .type,
-.proposition .type,
-.definition  .type,
-.notation    .type,
-.remark      .type {
+.block .type {
   font-weight: bold;
   text-transform: capitalize;
 }
 
-.theorem     .numbering,
-.lemma       .numbering,
-.proposition .numbering,
-.definition  .numbering,
-.notation    .numbering,
-.remark      .numbering {
+.block .numbering {
   margin-left: 0.5ex;
   font-weight: bold;
 }
 
-.theorem     .desc,
-.lemma       .desc,
-.proposition .desc,
-.definition  .desc,
-.notation    .desc,
-.remark      .desc {
+.block .desc {
   font-weight: normal;
   font-style: italic;
 }
 
-.theorem     .desc::first-letter,
-.lemma       .desc::first-letter,
-.proposition .desc::first-letter,
-.definition  .desc::first-letter,
-.notation    .desc::first-letter,
-.remark      .desc::first-letter {
+.block .desc::first-letter {
   text-transform: capitalize;
 }
 
-.theorem     .desc::before,
-.lemma       .desc::before,
-.proposition .desc::before,
-.definition  .desc::before,
-.notation    .desc::before,
-.remark      .desc::before {
+.block .desc::before {
   content: " (";
   font-style: normal;
 }
 
-.theorem     .desc::after,
-.lemma       .desc::after,
-.proposition .desc::after,
-.definition  .desc::after,
-.notation    .desc::after,
-.remark      .desc::after {
+.block .desc::after {
   content: ")";
   font-style: normal;
 }
 
-.theorem::after,
-.lemma::after,
-.proposition::after,
-.definition::after,
-.notation::after,
-.remark::after {
+.block-header::after {
   content: ".";
   font-weight: bold;
 }

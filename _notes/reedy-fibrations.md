@@ -11,7 +11,6 @@ antex:
     \newcommand{\coslicecat}[2]{\vphantom{x}^{#1/\!}#2}
     \newcommand{\ccoslicecat}[2]{\vphantom{x}^{#1\sslash\!}#2}
 
-section-numbers: true
 theorem-numbers: true
 title: Reedy fibrations
 ---
@@ -34,6 +33,7 @@ When this occurs outside of an explicitly type theoretic context, one should fee
 {% definition inverse category %}
 A binary relation $\prec$ may be placed on the collection of objects of any category $\mathcal C$ by defining $y \prec x$ if and only if there is an arrow $x \rightarrow y$ in $\mathcal C$.
 An *inverse category* $\mathcal I$ is one for which $\prec$ is well-founded.
+{% enddefinition %}
 
 {% definition degree/rank %}
 Given an inverse category $\mathcal I$, we can define the *degree* aka *rank $\rho(x)$ of an object $x$* of $\mathcal I$ by well-founded recursion in the usual way:
@@ -44,12 +44,14 @@ The *rank $\rho(\mathcal I)$ of $\mathcal I$* itself is then
 \\[
   \rho(\mathcal I) \coloneqq \sup_{x \, \in \, \mathcal I} \big( \rho(x) + 1 \big).
 \\]
+{% enddefinition %}
 
 Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree---$\rho(y) < \rho(x)$.
 
 {% definition truncated inverse category %}
 For an inverse category $\mathcal I$ and $x \in \mathcal I$, the *$x$-truncated category $\Ix$* is the full subcategory of $\mathcal I$ on objects $y \prec x$.
 We also use $\Iex$ to denote the full subcategory on $\Ix \cup \\{x\\}$, but do not bother to give it a name.
+{% enddefinition %}
 
 
 {% section Diagrams on inverse categories %}
@@ -62,6 +64,7 @@ denote the full subcategory of
 without the object $\mathrm{1}_x \colon x \rightarrow x$.
 Note that for an inverse category $\mathcal I$ and $x \in \mathcal I$ there is the canonical "codomain" forgetful functor
 {% tex %}$U \colon \ccoslicecat{x}{\mathcal I} \rightarrow \Ix${% endtex %}.
+{% endnotation %}
 
 Suppose we have a category $\mathcal C$, an inverse category $\mathcal I$ and a diagram $A\_{\prec x} \colon \mathcal{I}\_{\prec x} \rightarrow \mathcal C$ on the truncated inverse category.
 By unfolding definitions, we can see that (the data of) extensions of $A_{\prec x}$ to a diagram
@@ -91,6 +94,7 @@ $
 $
 {% endtex %}
 if it exists.
+{% enddefinition %}
 
 The preceding discussion then says that if the $x$-matching object for $A_{\prec x}$ exists, we can extend $A_{\prec x}$ to $x$ by simply giving an object $A_x$ and a map $A_x \rightarrow M_xA$ in $\mathcal I$.
 
@@ -151,9 +155,11 @@ Equivalently, it's one with all matching objects and such that $A_x \rightarrow 
 Note that the terminal diagram
 {% tex %}$\Delta_\mathbbm{1}${% endtex %}
 is itself Reedy fibrant.
+{% enddefinition %}
 
 {% remark %}
 The extra fibrancy requirement on the map into the pullback in definition {% ref Reedy fibration, Reedy fibrant diagram %} above ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.
+{% endremark %}
 
 
 {% section Type-valued Reedy fibrant diagrams %}
