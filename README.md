@@ -1,10 +1,8 @@
-# My notes
+<https://joshchen.io/math>
 
 These are my (work-in-progress, often incomplete) online math notes, based on the excellent tool [Krater][1].
 
-## Writing hints
-
-Notes are written in a combination of Markdown and LaTeX (see the Krater [readme][2] and [sample page][3] for the basics), with the following extra LaTeX-like functionality:
+Notes (stored in `_notes`) are written in a combination of Markdown and LaTeX (see the Krater [readme][2] and [sample page][3] for the basics), with the following extra LaTeX-like functionality:
 
 ### Sections and numbering
 

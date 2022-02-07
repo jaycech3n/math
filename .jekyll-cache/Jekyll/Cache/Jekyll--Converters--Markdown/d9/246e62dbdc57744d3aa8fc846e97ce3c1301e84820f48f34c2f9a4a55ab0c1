@@ -1,4 +1,4 @@
-I"ë(<h1 id="reedy-fibrations">Reedy fibrations</h1>
+I"Œ(<h1 id="reedy-fibrations">Reedy fibrations</h1>
 
 <p>The first part of this explainer mostly follows <a class="citation" href="#shulman:2014:univalence">(Shulman, 2014)</a>.</p>
 
@@ -89,14 +89,14 @@ are equivalently lids of the square
 (where the walls and base are the evident arrows), which are equivalently arrows
 \[
   A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x
-\] <span class="equation" id="map-into-pullback"><span class="type">equation</span><span class="numbering" id="6">6</span><span class="desc">map-into-pullback</span></span>
+\] <span class="equation" id="eqn-pullback-map"><span class="type">equation</span><span class="numbering" id="6">6</span><span class="desc">eqn:pullback-map</span></span>
 such that
 <span class="antex display"><img data-antex="d2609b105add3b08f108305b9c374619" src="/math/antex/d2609b105add3b08f108305b9c374619.svg" /></span>
 commutes, provided that the pullback exists.</p>
 
 <p>To summarize: if an inverse diagram $A \colon \mathcal{C}^{\mathcal I}$ has all matching objects, then it has a simple and uniform recursive description in terms of maps into $M_xA$ for all $x \in \mathcal I$ (note that $M_xA$ is always terminal for $\prec$-minimal $x$).
 Similarly, maps between inverse diagrams $A$, $B$ with all matching objects also have a uniform description in terms of maps in the sense of
-<a href="#map-into-pullback" class="ref">6</a>,
+<a href="#eqn-pullback-map" class="ref">6</a>,
 assuming the pullback exists in $\mathcal C$.</p>
 
 <p>Part of the appeal of these properties is that they suggest the possibility of encoding, for fixed $\mathcal I$, the <em>type</em> of such $\mathcal I$-diagrams and maps between them (possibly subject to additional conditions).
@@ -113,7 +113,7 @@ Let $\mathcal C$ be a type theoretic fibration category and $\mathcal I$ an inve
 A <em>Reedy fibration</em> $f \colon A \rightarrow B$ between diagrams $A,\ B \colon \mathcal{C}^{\mathcal I}$ is one where:</p>
   <ul>
     <li>$A$ and $B$ have all matching objects,</li>
-    <li>for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed above is a fibration.</li>
+    <li>for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed in <a href="#eqn-pullback-map" class="ref">6</a> is a fibration.</li>
   </ul>
 
   <p>A <em>Reedy fibrant diagram</em> $A \colon \mathcal{C}^{\mathcal I}$ is one for which the terminal arrow
@@ -127,12 +127,10 @@ is itself Reedy fibrant.</p>
 
 <div class="remark block">
   <p><span class="block-header"><span class="type">remark</span><span class="numbering" id="8">8</span></span>
-The extra fibrancy requirement on the map into the pullback in definition <a href="#reedy-fibration--reedy-fibrant-diagram" class="ref">7</a> above ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.</p>
+The extra fibrancy requirement on the map into the pullback in definition <a href="#reedy-fibration--reedy-fibrant-diagram" class="ref">7</a> ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.</p>
 </div>
 
 <h2 class="section" id="type-valued-reedy-fibrant-diagrams">Type-valued Reedy fibrant diagrams</h2>
-
-<p>Here is a test link to section <a href="#diagrams-on-inverse-categories" class="ref">diagrams-on-inverse-categories</a>.</p>
 
 <p><span class="todo tag" tabindex="0"><span>todo</span></span></p>
 

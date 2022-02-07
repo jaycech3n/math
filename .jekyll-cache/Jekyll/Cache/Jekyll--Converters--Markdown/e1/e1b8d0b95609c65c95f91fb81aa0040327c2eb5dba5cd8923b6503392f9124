@@ -1,4 +1,4 @@
-I"'<h1 id="reedy-fibrations">Reedy fibrations</h1>
+I"�(<h1 id="reedy-fibrations">Reedy fibrations</h1>
 
 <p>The first part of this explainer mostly follows <a class="citation" href="#shulman:2014:univalence">(Shulman, 2014)</a>.</p>
 
@@ -15,13 +15,13 @@ When this occurs outside of an explicitly type theoretic context, one should fee
 <h2 class="section" id="inverse-categories">Inverse categories</h2>
 
 <div class="definition block" id="inverse-category">
-  <p><span class="block-header"><span class="type">definition</span><span class="desc">inverse category</span></span>
+  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="1">1</span><span class="desc">inverse category</span></span>
 A binary relation $\prec$ may be placed on the collection of objects of any category $\mathcal C$ by defining $y \prec x$ if and only if there is an arrow $x \rightarrow y$ in $\mathcal C$.
 An <em>inverse category</em> $\mathcal I$ is one for which $\prec$ is well-founded.</p>
 </div>
 
 <div class="definition block" id="degreerank">
-  <p><span class="block-header"><span class="type">definition</span><span class="desc">degree/rank</span></span>
+  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="2">2</span><span class="desc">degree/rank</span></span>
 Given an inverse category $\mathcal I$, we can define the <em>degree</em> aka <em>rank $\rho(x)$ of an object $x$</em> of $\mathcal I$ by well-founded recursion in the usual way:
 \[
   \rho(x) \coloneqq \sup_{y \, \prec \, x} \big( \rho(y) + 1 \big).
@@ -35,7 +35,7 @@ The <em>rank $\rho(\mathcal I)$ of $\mathcal I$</em> itself is then
 <p>Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree—$\rho(y) &lt; \rho(x)$.</p>
 
 <div class="definition block" id="truncated-inverse-category">
-  <p><span class="block-header"><span class="type">definition</span><span class="desc">truncated inverse category</span></span>
+  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="3">3</span><span class="desc">truncated inverse category</span></span>
 For an inverse category $\mathcal I$ and $x \in \mathcal I$, the <em>$x$-truncated category $\Ix$</em> is the full subcategory of $\mathcal I$ on objects $y \prec x$.
 We also use $\Iex$ to denote the full subcategory on $\Ix \cup \{x\}$, but do not bother to give it a name.</p>
 </div>
@@ -43,7 +43,7 @@ We also use $\Iex$ to denote the full subcategory on $\Ix \cup \{x\}$, but do no
 <h2 class="section" id="diagrams-on-inverse-categories">Diagrams on inverse categories</h2>
 
 <div class="notation block">
-  <p><span class="block-header"><span class="type">notation</span></span>
+  <p><span class="block-header"><span class="type">notation</span><span class="numbering" id="4">4</span></span>
 For a category $\mathcal C$ and $x \in \mathcal C$, let
 <span class="antex"><img data-antex="a3c32dc5748e5a64901f2af86cff4b1a" src="/math/antex/a3c32dc5748e5a64901f2af86cff4b1a.svg" /></span>
 denote the full subcategory of
@@ -65,7 +65,7 @@ which are equivalently maps into
 provided this limit exists.</p>
 
 <div class="definition block" id="matching-object">
-  <p><span class="block-header"><span class="type">definition</span><span class="desc">matching object</span></span>
+  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="5">5</span><span class="desc">matching object</span></span>
 Suppose we have a category $\mathcal C$, inverse category $\mathcal I$ and diagram $A \colon \mathcal J \rightarrow \mathcal C$ where $\mathcal J \subseteq \mathcal I$ is a subcategory containing $\Ix$.
 The <em>matching object $M_xA$ (of $A$, on “level” $x$)</em> is the limit
 <span class="antex display"><img data-antex="7190e628ffaa5f8c59cc6cd23ef7c9ed" src="/math/antex/7190e628ffaa5f8c59cc6cd23ef7c9ed.svg" /></span>
@@ -89,14 +89,14 @@ are equivalently lids of the square
 (where the walls and base are the evident arrows), which are equivalently arrows
 \[
   A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x
-\] <span class="equation" id="map-into-pullback"><span class="type">equation</span><span class="numbering" id="1">1</span><span class="desc">map-into-pullback</span></span>
+\] <span class="equation" id="eqn-pullback-map"><span class="type">equation</span><span class="numbering" id="6">6</span><span class="desc">eqn:pullback-map</span></span>
 such that
 <span class="antex display"><img data-antex="d2609b105add3b08f108305b9c374619" src="/math/antex/d2609b105add3b08f108305b9c374619.svg" /></span>
 commutes, provided that the pullback exists.</p>
 
 <p>To summarize: if an inverse diagram $A \colon \mathcal{C}^{\mathcal I}$ has all matching objects, then it has a simple and uniform recursive description in terms of maps into $M_xA$ for all $x \in \mathcal I$ (note that $M_xA$ is always terminal for $\prec$-minimal $x$).
 Similarly, maps between inverse diagrams $A$, $B$ with all matching objects also have a uniform description in terms of maps in the sense of
-<a href="#map-into-pullback" class="ref">1</a>,
+<a href="#eqn-pullback-map" class="ref">6</a>,
 assuming the pullback exists in $\mathcal C$.</p>
 
 <p>Part of the appeal of these properties is that they suggest the possibility of encoding, for fixed $\mathcal I$, the <em>type</em> of such $\mathcal I$-diagrams and maps between them (possibly subject to additional conditions).
@@ -108,12 +108,12 @@ In particular, these are equipped with a terminal object
 and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of <em>fibrations</em> (containing all terminal arrows and isomorphisms, closed under pullbacks, etc.) interpreting types-in-context.</p>
 
 <div class="definition block" id="reedy-fibration--reedy-fibrant-diagram">
-  <p><span class="block-header"><span class="type">definition</span><span class="desc">Reedy fibration, Reedy fibrant diagram</span></span>
+  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="7">7</span><span class="desc">Reedy fibration, Reedy fibrant diagram</span></span>
 Let $\mathcal C$ be a type theoretic fibration category and $\mathcal I$ an inverse category.
 A <em>Reedy fibration</em> $f \colon A \rightarrow B$ between diagrams $A,\ B \colon \mathcal{C}^{\mathcal I}$ is one where:</p>
   <ul>
     <li>$A$ and $B$ have all matching objects,</li>
-    <li>for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed above is a fibration.</li>
+    <li>for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ <a href="#eqn-pullback-map" class="ref">6</a>, discussed above, is a fibration.</li>
   </ul>
 
   <p>A <em>Reedy fibrant diagram</em> $A \colon \mathcal{C}^{\mathcal I}$ is one for which the terminal arrow
@@ -126,8 +126,8 @@ is itself Reedy fibrant.</p>
 </div>
 
 <div class="remark block">
-  <p><span class="block-header"><span class="type">remark</span></span>
-The extra fibrancy requirement on the map into the pullback in definition <a href="#reedy-fibration--reedy-fibrant-diagram" class="ref">reedy-fibration–reedy-fibrant-diagram</a> above ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.</p>
+  <p><span class="block-header"><span class="type">remark</span><span class="numbering" id="8">8</span></span>
+The extra fibrancy requirement on the map into the pullback in definition <a href="#reedy-fibration--reedy-fibrant-diagram" class="ref">7</a> above ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.</p>
 </div>
 
 <h2 class="section" id="type-valued-reedy-fibrant-diagrams">Type-valued Reedy fibrant diagrams</h2>
