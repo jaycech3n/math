@@ -1,5 +1,3 @@
-require 'slugify'
-
 module Jekyll
   module TheoremsEquations
 
@@ -47,7 +45,7 @@ module Jekyll
         super
         @type = type
         @desc = desc.strip
-        @slug = @desc.slugify
+        @slug = Jekyll::Utils.slugify(@desc, mode: 'pretty')
       end
 
       def render(context)
@@ -67,7 +65,7 @@ module Jekyll
         super
         @type = type
         @desc = desc.strip
-        @slug = @desc.slugify
+        @slug = Jekyll::Utils.slugify(@desc, mode: 'pretty')
       end
 
       def render(context)

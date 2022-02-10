@@ -8,5 +8,4 @@ group :jekyll_plugins do
   gem 'jekyll-antex', '~> 0.6.0'
   gem 'jekyll-feed'
   gem 'jekyll-scholar'
-  gem 'slugify'
 end

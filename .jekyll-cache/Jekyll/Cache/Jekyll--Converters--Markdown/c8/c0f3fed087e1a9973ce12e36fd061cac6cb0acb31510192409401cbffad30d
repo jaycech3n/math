@@ -1,4 +1,4 @@
-I"Œ(<h1 id="reedy-fibrations">Reedy fibrations</h1>
+I"™)<h1 id="reedy-fibrations">Reedy fibrations</h1>
 
 <p>The first part of this explainer mostly follows <a class="citation" href="#shulman:2014:univalence">(Shulman, 2014)</a>.</p>
 
@@ -20,7 +20,7 @@ A binary relation $\prec$ may be placed on the collection of objects of any cate
 An <em>inverse category</em> $\mathcal I$ is one for which $\prec$ is well-founded.</p>
 </div>
 
-<div class="definition block" id="degreerank">
+<div class="definition block" id="degree-rank">
   <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="2">2</span><span class="desc">degree/rank</span></span>
 Given an inverse category $\mathcal I$, we can define the <em>degree</em> aka <em>rank $\rho(x)$ of an object $x$</em> of $\mathcal I$ by well-founded recursion in the usual way:
 \[
@@ -32,7 +32,8 @@ The <em>rank $\rho(\mathcal I)$ of $\mathcal I$</em> itself is then
 \]</p>
 </div>
 
-<p>Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degreeâ€”$\rho(y) &lt; \rho(x)$.</p>
+<p>Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degreeâ€”i.e. $\rho(y) &lt; \rho(x)$.
+We may always assume that $\rho$ is of the form given in definition <a href="#degree-rank" class="ref">2</a>.</p>
 
 <div class="definition block" id="truncated-inverse-category">
   <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="3">3</span><span class="desc">truncated inverse category</span></span>
@@ -107,16 +108,19 @@ In particular, these are equipped with a terminal object
 <span class="antex"><img data-antex="43bfb871712d55fdbd135346b2006a5c" src="/math/antex/43bfb871712d55fdbd135346b2006a5c.svg" /></span>
 and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of <em>fibrations</em> (containing all terminal arrows and isomorphisms, closed under pullbacks, etc.) interpreting types-in-context.</p>
 
-<div class="definition block" id="reedy-fibration--reedy-fibrant-diagram">
-  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="7">7</span><span class="desc">Reedy fibration, Reedy fibrant diagram</span></span>
+<div class="definition block" id="reedy-fibration">
+  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="7">7</span><span class="desc">Reedy fibration</span></span>
 Let $\mathcal C$ be a type theoretic fibration category and $\mathcal I$ an inverse category.
 A <em>Reedy fibration</em> $f \colon A \rightarrow B$ between diagrams $A,\ B \colon \mathcal{C}^{\mathcal I}$ is one where:</p>
   <ul>
     <li>$A$ and $B$ have all matching objects,</li>
     <li>for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed in <a href="#eqn-pullback-map" class="ref">6</a> is a fibration.</li>
   </ul>
+</div>
 
-  <p>A <em>Reedy fibrant diagram</em> $A \colon \mathcal{C}^{\mathcal I}$ is one for which the terminal arrow
+<div class="definition block" id="reedy-fibrant-diagram">
+  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="8">8</span><span class="desc">Reedy fibrant diagram</span></span>
+A <em>Reedy fibrant diagram</em> $A \colon \mathcal{C}^{\mathcal I}$ is one for which the terminal arrow
 <span class="antex"><img data-antex="8ba8accefc52391da7e0d3aeeb664bd4" src="/math/antex/8ba8accefc52391da7e0d3aeeb664bd4.svg" /></span>
 is a Reedy fibration.
 Equivalently, itâ€™s one with all matching objects and such that $A_x \rightarrow M_xA$ is a fibration for all $x$.
@@ -126,8 +130,8 @@ is itself Reedy fibrant.</p>
 </div>
 
 <div class="remark block">
-  <p><span class="block-header"><span class="type">remark</span><span class="numbering" id="8">8</span></span>
-The extra fibrancy requirement on the map into the pullback in definition <a href="#reedy-fibration--reedy-fibrant-diagram" class="ref">7</a> ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.</p>
+  <p><span class="block-header"><span class="type">remark</span><span class="numbering" id="9">9</span></span>
+The extra fibrancy requirement on the map into the pullback in definition <a href="#reedy-fibration" class="ref">7</a> ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.</p>
 </div>
 
 <h2 class="section" id="type-valued-reedy-fibrant-diagrams">Type-valued Reedy fibrant diagrams</h2>

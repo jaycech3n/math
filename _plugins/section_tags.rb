@@ -27,7 +27,7 @@ module Jekyll
       def initialize(tag_name, title, tokens)
         super
         @title = title.strip
-        @slug = @title.slugify
+        @slug = Jekyll::Utils.slugify(@title, mode: 'pretty')
       end
 
       def render(context)
@@ -46,7 +46,7 @@ module Jekyll
       def initialize(tag_name, title, tokens)
         super
         @title = title.strip
-        @slug = @title.slugify
+        @slug = Jekyll::Utils.slugify(@title, mode: 'pretty')
       end
 
       def render(context)
@@ -65,7 +65,7 @@ module Jekyll
       def initialize(tag_name, title, tokens)
         super
         @title = title.strip
-        @slug = @title.slugify
+        @slug = Jekyll::Utils.slugify(@title, mode: 'pretty')
       end
 
       def render(context)

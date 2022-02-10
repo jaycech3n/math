@@ -3,7 +3,7 @@ module Jekyll
 
     def initialize(tag_name, ref, tokens)
       super
-      @ref = ref.strip.slugify
+      @ref = Jekyll::Utils.slugify(ref.strip, mode: 'pretty')
       @numbering = Jekyll.const_defined?("Numbering")
     end
 
