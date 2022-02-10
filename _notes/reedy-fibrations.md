@@ -46,7 +46,8 @@ The *rank $\rho(\mathcal I)$ of $\mathcal I$* itself is then
 \\]
 {% enddefinition %}
 
-Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree---$\rho(y) < \rho(x)$.
+Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree---i.e. $\rho(y) < \rho(x)$.
+We may always assume that $\rho$ is of the form given in definition {% ref degree/rank %}.
 
 {% definition truncated inverse category %}
 For an inverse category $\mathcal I$ and $x \in \mathcal I$, the *$x$-truncated category $\Ix$* is the full subcategory of $\mathcal I$ on objects $y \prec x$.
@@ -142,12 +143,14 @@ In particular, these are equipped with a terminal object
 {% tex %}$\mathbbm 1${% endtex %}
 and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of *fibrations* (containing all terminal arrows and isomorphisms, closed under pullbacks, etc.) interpreting types-in-context.
 
-{% definition Reedy fibration, Reedy fibrant diagram %}
+{% definition Reedy fibration %}
 Let $\mathcal C$ be a type theoretic fibration category and $\mathcal I$ an inverse category.
 A *Reedy fibration* $f \colon A \rightarrow B$ between diagrams $A,\ B \colon \mathcal{C}^{\mathcal I}$ is one where:
 - $A$ and $B$ have all matching objects,
 - for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed in {% ref eqn:pullback-map %} is a fibration.
+{% enddefinition %}
 
+{% definition Reedy fibrant diagram %}
 A *Reedy fibrant diagram* $A \colon \mathcal{C}^{\mathcal I}$ is one for which the terminal arrow
 {% tex %}$A \rightarrow \Delta_\mathbbm{1}${% endtex %}
 is a Reedy fibration.
@@ -158,7 +161,7 @@ is itself Reedy fibrant.
 {% enddefinition %}
 
 {% remark %}
-The extra fibrancy requirement on the map into the pullback in definition {% ref Reedy fibration, Reedy fibrant diagram %} ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.
+The extra fibrancy requirement on the map into the pullback in definition {% ref Reedy fibration %} ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.
 {% endremark %}
 
 
