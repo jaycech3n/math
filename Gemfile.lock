@@ -86,7 +86,6 @@ GEM
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
-    slugify (1.0.7)
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     unicode-display_width (1.8.0)
@@ -99,7 +98,6 @@ DEPENDENCIES
   jekyll-antex (~> 0.6.0)
   jekyll-feed
   jekyll-scholar
-  slugify
 
 RUBY VERSION
    ruby 2.7.5p203
