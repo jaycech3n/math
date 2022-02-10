@@ -59,8 +59,10 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+      theorem-numbers: true
 
 collections:
   notes:
     output: true
     permalink: :name
+

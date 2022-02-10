@@ -89,5 +89,8 @@ Liquid::Template.register_tag('proposition', Jekyll::TheoremsEquations::TheoremB
 Liquid::Template.register_tag('definition', Jekyll::TheoremsEquations::TheoremBlock)
 Liquid::Template.register_tag('notation', Jekyll::TheoremsEquations::TheoremBlock)
 Liquid::Template.register_tag('remark', Jekyll::TheoremsEquations::TheoremBlock)
+Liquid::Template.register_tag('note', Jekyll::TheoremsEquations::TheoremBlock)
+Liquid::Template.register_tag('observation', Jekyll::TheoremsEquations::TheoremBlock)
+Liquid::Template.register_tag('question', Jekyll::TheoremsEquations::TheoremBlock)
 
 Liquid::Template.register_tag('equation', Jekyll::TheoremsEquations::EquationTag)

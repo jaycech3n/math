@@ -11,7 +11,6 @@ antex:
     \newcommand{\coslicecat}[2]{\vphantom{x}^{#1/\!}#2}
     \newcommand{\ccoslicecat}[2]{\vphantom{x}^{#1\sslash\!}#2}
 
-theorem-numbers: true
 title: Reedy fibrations
 ---
 
