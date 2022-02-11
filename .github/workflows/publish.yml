@@ -38,7 +38,7 @@ jobs:
         with:
           packages-path: ${{ github.workspace }}/.github/texlive.packages
           profile-path: ${{ github.workspace }}/.github/texlive.profile
-          update-excludes-path: ${{ github.workspace }}/.github/texlive.update-excludes
+          excludes-path: ${{ github.workspace }}/.github/texlive.excludes
 
       - name: Debug
         run: dvisvgm -V1
