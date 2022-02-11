@@ -8,6 +8,6 @@ published: true
 
 Lorem ipsum etc. etc.
 
-\[ e^{i\pi} = -1 \\ {% equation my-eqn %}
+\[e^{i\pi} = -1\] {% equation my-eqn %}
 
 End test?...Haha nope, here's a reference to {% ref my-eqn %}
