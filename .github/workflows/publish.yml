@@ -34,7 +34,7 @@ jobs:
           bundle install --jobs 4 --retry 3
 
       - name: Setup TeX Live
-        uses: paolobrasolin/setup-texlive-action@v1.0.2
+        uses: jaycech3n/setup-texlive-action
         with:
           packages-path: ${{ github.workspace }}/.github/texlive.packages
           profile-path: ${{ github.workspace }}/.github/texlive.profile
