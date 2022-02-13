@@ -252,10 +252,16 @@ Theorem labels
   font-weight: bold;
 }
 
+
+/******************************************************************************
+Equation tags
+******************************************************************************/
+
 .equation {
   float: right;
   position: relative;
-  top: -2.5em
+  margin-left: 1ex;
+  top: -2.4em
 }
 
 .equation .type,

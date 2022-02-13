@@ -4,7 +4,7 @@ katex:
     "\\Ix": "\\mathcal{I}_{\\prec x}"
     "\\Iex": "\\mathcal{I}_{\\preceq x}"
 antex:
-  preamble: >-
+  preamble:
     \usepackage{amsmath,amsfonts,mathtools,stmaryrd,tikz-cd,bbm}
     \newcommand{\Ix}{\mathcal{I}_{\prec x}}
     \newcommand{\Iex}{\mathcal{I}_{\preceq x}}

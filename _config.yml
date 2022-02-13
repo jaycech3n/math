@@ -15,12 +15,11 @@ kramdown:
 
 katex:
   macros:
-    #"\\ExampleGlobalMacro": "\\LaTeX"
+    # "\\ExampleGlobalMacro": "\\LaTeX"
   delimiters:
-    - { left: "$", right: "$", display: false }
-    - { left: "$$", right: "$$", display: true }
-    - { left: "\\(", right: "\\)", display: false }
-    - { left: "\\[", right: "\\]", display: true }
+    - {left: "$", right: "$", display: false}
+    - {left: "\\(", right: "\\)", display: false}
+    - {left: "\\[", right: "\\]", display: true}
 
 antex:
   url_path_prefix: *baseurl
@@ -58,6 +57,10 @@ defaults:
     scope:
       path: "" # an empty string here means all files in the project
     values:
+      katex:
+        macros:
+      antex:
+        preamble:
       layout: "default"
       theorem-numbers: true
 

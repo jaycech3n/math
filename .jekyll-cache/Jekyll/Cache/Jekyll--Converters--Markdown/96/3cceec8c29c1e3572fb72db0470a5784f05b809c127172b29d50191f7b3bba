@@ -1,0 +1,48 @@
+I"$<p>Dollars, no spacing 1
+<span class="kdmath">$1 + 1 = 2$</span> <span class="equation" id="d0.1"><span class="type">equation</span><span class="numbering" id="1">1</span><span class="desc">d0.1</span></span></p>
+
+<p>Dollars, no spacing 2
+<span class="kdmath">$1 + 1 = 2$</span>
+<span class="equation" id="d0.2"><span class="type">equation</span><span class="numbering" id="2">2</span><span class="desc">d0.2</span></span></p>
+
+<p>Dollars, spacing before 1</p>
+
+<p><span class="kdmath">$1+1=2$</span> <span class="equation" id="d1.1"><span class="type">equation</span><span class="numbering" id="3">3</span><span class="desc">d1.1</span></span></p>
+
+<p>Dollars, spacing before 2</p>
+
+<p><span class="kdmath">$1+1=2$</span>
+<span class="equation" id="d1.2"><span class="type">equation</span><span class="numbering" id="4">4</span><span class="desc">d1.2</span></span></p>
+
+<p>Dollars, spacing both</p>
+
+<div class="kdmath">$$
+1+1=2
+$$</div>
+
+<p><span class="equation" id="d2"><span class="type">equation</span><span class="numbering" id="5">5</span><span class="desc">d2</span></span></p>
+
+<!-- -- -->
+
+<p>Brackets, no spacing 1
+\[1 + 1 = 2\] <span class="equation" id="b0.1"><span class="type">equation</span><span class="numbering" id="6">6</span><span class="desc">b0.1</span></span></p>
+
+<p>Brackets, no spacing 2
+\[1 + 1 = 2\]
+<span class="equation" id="b0.2"><span class="type">equation</span><span class="numbering" id="7">7</span><span class="desc">b0.2</span></span></p>
+
+<p>Brackets, spacing before 1</p>
+
+<p>\[1 + 1 = 2\] <span class="equation" id="b1.1"><span class="type">equation</span><span class="numbering" id="8">8</span><span class="desc">b1.1</span></span></p>
+
+<p>Brackets, spacing before 2</p>
+
+<p>\[1 + 1 = 2\]
+<span class="equation" id="b1.2"><span class="type">equation</span><span class="numbering" id="9">9</span><span class="desc">b1.2</span></span></p>
+
+<p>Brackets, spacing both</p>
+
+<p>\[1 + 1 = 2\]</p>
+
+<p><span class="equation" id="b2"><span class="type">equation</span><span class="numbering" id="10">10</span><span class="desc">b2</span></span></p>
+:ET
