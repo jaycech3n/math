@@ -27,12 +27,14 @@ Optional numbering with `theorem-numbers: true` in front matter.
 
 Also available are `lemma`, `proposition`, `definition`, `notation`, `remark`.
 
-### Equation labels
+### Labels
 
 ```
-{% equation choose-your-own-reference-name %}
+{% labeled choose-your-own-reference-name %}
+Equation, diagram, etc. goes here
+{% endlabeled %}
 ```
-after a display math block generates the appropriate numbered label.
+generates the appropriate numbered label.
 There's currently no support for custom labels.
 
 ### Intra-document references
