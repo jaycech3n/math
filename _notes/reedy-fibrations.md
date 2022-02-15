@@ -176,8 +176,8 @@ The extra fibrancy requirement on the map into the pullback in definition {% ref
 Now fix an inverse category $\mathcal I$ and ask for $\mathcal I$-diagrams in $\Type$,
 i.e. presheaves $A \colon \Type^\mathcal{I}$ valued in the category of types and functions of a type theory with $\Pi$, strong $\Sigma$, and unit types.
 
-At this level of generality, it's not yet known how---or indeed, if it's even possible---to perform such constructions type-theoretically.
-Certainly there is no hope if we ask for *strict* diagrams, so we should look instead for the correct notion "up to homotopy".
+At such a level of generality, it's not yet known how to perform such constructions type-theoretically, or indeed, if it's even possible.
+Certainly there's no hope if we're asking for *strict* diagrams, so we should look instead for the correct notion "up to homotopy".
 
 {% TODO
   1 • Explain what a strict diagram is in this context and why the construction of such are not possible in general.

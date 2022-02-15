@@ -1,4 +1,4 @@
-I"�,<h1 id="reedy-fibrations">Reedy fibrations</h1>
+I"�,<h1 id="reedy-fibrations">Reedy fibrations</h1>
 
 <p>The first part of this explainer mostly follows <a class="citation" href="#shulman:2014:univalence">(Shulman, 2014)</a>.</p>
 
@@ -143,8 +143,8 @@ The extra fibrancy requirement on the map into the pullback in definition <a hre
 <p>Now fix an inverse category $\mathcal I$ and ask for $\mathcal I$-diagrams in $\Type$,
 i.e. presheaves $A \colon \Type^\mathcal{I}$ valued in the category of types and functions of a type theory with $\Pi$, strong $\Sigma$, and unit types.</p>
 
-<p>At this level of generality, it’s not yet known how—or indeed, if it’s even possible—to perform such constructions type-theoretically.
-Certainly there is no hope if we ask for <em>strict</em> diagrams, so we should look instead for the correct notion “up to homotopy”.</p>
+<p>At such a level of generality, it’s not yet known how to perform such constructions type-theoretically, or indeed, if it’s even possible.
+Certainly there’s no hope if we’re asking for <em>strict</em> diagrams, so we should look instead for the correct notion “up to homotopy”.</p>
 
 <p><span class="todo tag" data-text="—1 • Explain what a strict diagram is in this context and why the construction of such are not possible in general.   2 • Possible for diagrams over finite inverse categories; explain.   3 • Conjecture: recursive inverse categories.   4 • Limits of Reedy fibrant diagrams." tabindex="0"><span>todo</span></span></p>
 
