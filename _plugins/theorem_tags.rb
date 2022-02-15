@@ -52,7 +52,21 @@ module Jekyll
       end
     end
 
-    # In contrast to theorem blocks, label block counters are always available
+    # Proof blocks are never added to the counter.
+    class ProofBlock < Liquid::Block
+      def initialize(type, desc, tokens)
+        super
+        @type = type
+        @desc = desc.strip
+        @slug = Jekyll::Utils.slugify(@desc, mode: 'pretty')
+      end
+
+      def render(context)
+        Helper::render(@type, @desc, @slug, "", super)
+      end
+    end
+
+    # Label block counters are always available.
     class LabelBlock < Liquid::Block
       def initialize(type, desc, tokens)
         super
@@ -86,5 +100,7 @@ Liquid::Template.register_tag('note', Jekyll::TheoremTags::TheoremBlock)
 Liquid::Template.register_tag('observation', Jekyll::TheoremTags::TheoremBlock)
 Liquid::Template.register_tag('question', Jekyll::TheoremTags::TheoremBlock)
 Liquid::Template.register_tag('conjecture', Jekyll::TheoremTags::TheoremBlock)
+
+Liquid::Template.register_tag('proof', Jekyll::TheoremTags::ProofBlock)
 
 Liquid::Template.register_tag('labeled', Jekyll::TheoremTags::LabelBlock)

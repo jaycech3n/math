@@ -136,7 +136,7 @@ Main content
 ******************************************************************************/
 
 main {
-  max-width: 45em;
+  max-width: 90ex;
   margin-top: 0;
   padding-top: 0;
   padding-left: 0;
@@ -223,17 +223,19 @@ Section labels
 
 
 /******************************************************************************
-Theorem labels
+Theorem blocks
 ******************************************************************************/
 
 .block .type {
   font-weight: bold;
+  font-style: normal;
   text-transform: capitalize;
 }
 
 .block .numbering {
   margin-left: 0.5ex;
   font-weight: bold;
+  font-style: normal
 }
 
 .block .desc {
@@ -258,6 +260,30 @@ Theorem labels
 .block-label::after {
   content: ".";
   font-weight: bold;
+  font-style: normal
+}
+
+.theorem.block,
+.lemma.block,
+.proposition.block {font-style: italic}
+
+.proof.block .type {
+  font-style: italic;
+  font-weight: normal
+}
+
+.proof.block .desc::before {content: none}
+.proof.block .desc::after {content: none}
+.proof.block .block-label::after {content: none}
+
+.proof.block p:last-child {margin-bottom: 0}
+
+.proof.block::after {
+  content: "❒";
+  font-weight: bold;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  position: relative;
+  margin-left: 82ex
 }
 
 
@@ -285,8 +311,8 @@ Label blocks
 In-text reference labels
 ******************************************************************************/
 
-.ref::before {content: "("}
-.ref::after {content: ")"}
+/* .ref::before {content: "("}
+.ref::after {content: ")"} */
 
 
 /******************************************************************************

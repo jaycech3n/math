@@ -12,11 +12,14 @@ title: Syntax in model in syntax
 
 # Syntax in model in syntax
 
-This short fragment is an exercise in points of view.
+This short stub is an exercise in points of view.
 It briefly sketches something almost tautological---and yet important, see for instance [this discussion][1]---namely that
-*the category of types of a type theory is equivalent to its syntactic display map category*.
 
-In what follows we fix a Martin-Löf type theory $T$ with $\Pi$, $\Sigma$ and unit type {%tex%}$\mathbbm 1${%endtex%}, and definitional eta for $\Sigma$.
+{% theorem Almost-tautology %}
+The category of types of a type theory is equivalent to its syntactic display map category.
+{% endtheorem %}
+
+In what follows we fix a Martin-Löf type theory $T$ with $\Pi$, $\Sigma$ with definitional eta, and unit type {%tex%}$\mathbbm 1${%endtex%}.
 $T$ is (at first) meant to be treated syntactically, i.e. from a traditional proof theorist's point of view, in terms of its judgments, axioms and logical rules.
 
 {% definition Syntactic display map category %}
@@ -40,7 +43,9 @@ $\Gamma = (x_1 \colon \Gamma_1, \dotsc, x_n \colon \Gamma_n)$.
 The *category of types* $\Type$ of $T$ is the category of closed types of $T$ and functions between them.
 {% enddefinition %}
 
-The point is that {% ref syntactic display map category %} and {% ref category of types %} define the same thing.
+The idea is that while definition ({% ref syntactic display map category %}) might seem more "external" or "semantic" in flavor and definition ({% ref category of types %}) more "internal" or "syntactically"-flavored, they are actually the same thing.
+
+{% proof %} (of Theorem {% ref Almost-tautology %}).
 Using a suggestive overloading of notation, we have the equivalences
 \\[ \Syn \xrightleftarrows[\centerdot,]{\tilde\Sigma} \Type \\]
 where $\tilde\Sigma$ is defined inductively on objects by
@@ -85,6 +90,9 @@ $
 $
 {% endtex %}
 and observe that definitional eta is needed for this to be an isomorphism in $\Syn$.
+{% endproof %}
+
+The purpose of this discussion is not to get bogged down in metatheoretic minutiae about syntax, but rather to gain an understanding of the *internal language* approach, such that one may switch back and forth between the internal syntax and the external categorical/model-theoretic point of view when performing constructions in type theory.
 
 
 [1]: http://nlab-pages.s3.us-east-2.amazonaws.com/nlab/show/categorical%20model%20of%20dependent%20types#StandInForSyntax

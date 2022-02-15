@@ -48,7 +48,7 @@ The *rank $\rho(\mathcal I)$ of $\mathcal I$* itself is then
 {% enddefinition %}
 
 Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree---i.e. $\rho(y) < \rho(x)$.
-We may always assume that $\rho$ is of the form given in definition {% ref degree/rank %}.
+We may always assume that $\rho$ is of the form given in definition ({% ref degree/rank %}).
 
 {% definition truncated inverse category %}
 For an inverse category $\mathcal I$ and $x \in \mathcal I$, the *$x$-truncated category $\Ix$* is the full subcategory of $\mathcal I$ on objects $y \prec x$.
@@ -138,7 +138,7 @@ commutes, provided that the pullback exists.
 
 To summarize: if an inverse diagram $A \colon \mathcal{C}^{\mathcal I}$ has all matching objects, then it has a simple and uniform recursive description in terms of maps into $M_xA$ for all $x \in \mathcal I$ (note that $M_xA$ is always terminal for $\prec$-minimal $x$).
 Similarly, maps between inverse diagrams $A$, $B$ with all matching objects also have a uniform description in terms of maps in the sense of
-{% ref eqn:pullback-map %},
+({% ref eqn:pullback-map %}),
 assuming the pullback exists in $\mathcal C$.
 
 Part of the appeal of these properties is that they suggest the possibility of encoding, for fixed $\mathcal I$, the *type* of such $\mathcal I$-diagrams and maps between them (possibly subject to additional conditions).
@@ -153,7 +153,7 @@ and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of *fibrations* (co
 Let $\mathcal C$ be a type theoretic fibration category and $\mathcal I$ an inverse category.
 A *Reedy fibration* $f \colon A \rightarrow B$ between diagrams $A,\ B \colon \mathcal{C}^{\mathcal I}$ is one where:
 - $A$ and $B$ have all matching objects,
-- for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed in {% ref eqn:pullback-map %} is a fibration.
+- for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed in ({% ref eqn:pullback-map %}) is a fibration.
 {% enddefinition %}
 
 {% definition Reedy fibrant diagram %}
@@ -167,7 +167,7 @@ is itself Reedy fibrant.
 {% enddefinition %}
 
 {% remark %}
-The extra fibrancy requirement on the map into the pullback in definition {% ref Reedy fibration %} ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.
+The extra fibrancy requirement on the map into the pullback in definition ({% ref Reedy fibration %}) ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.
 {% endremark %}
 
 
