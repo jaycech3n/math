@@ -1,5 +1,5 @@
 module Jekyll
-  module TheoremsEquations
+  module TheoremTags
 
     class Helper
       class << self
@@ -23,19 +23,12 @@ module Jekyll
           "<span class='numbering' id='#{numbering}'>#{numbering}</span>"
         end
 
-        def render_block(type, desc, slug, numbering_html, body)
+        def render(type, desc, slug, numbering_html, body)
           "<div class='#{type} block' id='#{slug}' markdown=1>"\
-            "<span class='block-header'><span class='type'>#{type}</span>"\
-            "#{numbering_html}#{"<span class='desc'>#{desc}</span>" unless desc.blank?}</span>" +
+            "<span class='block-label'><span class='type'>#{type}</span>"\
+            "#{numbering_html}#{"<span class='desc'>#{desc}</span>" unless desc.blank? || desc.empty?}</span>" +
             body +
           "</div>"
-        end
-
-        def render(type, desc, slug, numbering_html)
-          "<span class='#{type}' id='#{slug}'>"\
-            "<span class='type'>#{type}</span>"\
-            "#{numbering_html}#{"<span class='desc'>#{desc}</span>" unless desc.blank?}"\
-          "</span>"
         end
       end
     end
@@ -55,12 +48,12 @@ module Jekyll
         else
           numbering_html = ""
         end
-        Helper::render_block(@type, @desc, @slug, numbering_html, super)
+        Helper::render(@type, @desc, @slug, numbering_html, super)
       end
     end
 
-    # In contrast to theorem blocks, equation tag counters are always available
-    class EquationTag < Liquid::Tag
+    # In contrast to theorem blocks, label block counters are always available
+    class LabelBlock < Liquid::Block
       def initialize(type, desc, tokens)
         super
         @type = type
@@ -75,7 +68,7 @@ module Jekyll
         else
           numbering_html = ""
         end
-        Helper::render(@type, @desc, @slug, numbering_html)
+        Helper::render(@type, "", @slug, numbering_html, super)
       end
     end
 
@@ -83,14 +76,15 @@ module Jekyll
 end
 
 
-Liquid::Template.register_tag('theorem', Jekyll::TheoremsEquations::TheoremBlock)
-Liquid::Template.register_tag('lemma', Jekyll::TheoremsEquations::TheoremBlock)
-Liquid::Template.register_tag('proposition', Jekyll::TheoremsEquations::TheoremBlock)
-Liquid::Template.register_tag('definition', Jekyll::TheoremsEquations::TheoremBlock)
-Liquid::Template.register_tag('notation', Jekyll::TheoremsEquations::TheoremBlock)
-Liquid::Template.register_tag('remark', Jekyll::TheoremsEquations::TheoremBlock)
-Liquid::Template.register_tag('note', Jekyll::TheoremsEquations::TheoremBlock)
-Liquid::Template.register_tag('observation', Jekyll::TheoremsEquations::TheoremBlock)
-Liquid::Template.register_tag('question', Jekyll::TheoremsEquations::TheoremBlock)
+Liquid::Template.register_tag('theorem', Jekyll::TheoremTags::TheoremBlock)
+Liquid::Template.register_tag('lemma', Jekyll::TheoremTags::TheoremBlock)
+Liquid::Template.register_tag('proposition', Jekyll::TheoremTags::TheoremBlock)
+Liquid::Template.register_tag('definition', Jekyll::TheoremTags::TheoremBlock)
+Liquid::Template.register_tag('notation', Jekyll::TheoremTags::TheoremBlock)
+Liquid::Template.register_tag('remark', Jekyll::TheoremTags::TheoremBlock)
+Liquid::Template.register_tag('note', Jekyll::TheoremTags::TheoremBlock)
+Liquid::Template.register_tag('observation', Jekyll::TheoremTags::TheoremBlock)
+Liquid::Template.register_tag('question', Jekyll::TheoremTags::TheoremBlock)
+Liquid::Template.register_tag('conjecture', Jekyll::TheoremTags::TheoremBlock)
 
-Liquid::Template.register_tag('equation', Jekyll::TheoremsEquations::EquationTag)
+Liquid::Template.register_tag('labeled', Jekyll::TheoremTags::LabelBlock)

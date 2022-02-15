@@ -159,6 +159,7 @@ main a:active {
 
 main h1 {
   font-size: 2em;
+  line-height: 1em;
   margin-top: 0;
   margin-bottom: 1em
 }
@@ -175,15 +176,19 @@ p + ul {
 }
 
 ul.notes {
+  margin-top: 1em;
   padding: 0;
   list-style: none
 }
+
+ul.notes li + li {margin-top: 0.25em}
 
 ul.notes li::before {
   font-family: 'Noto Sans Symbols 2', sans-serif;
   content: "🙝";
   margin-right: 2ex;
 }
+
 
 /******************************************************************************
 Reference lists
@@ -194,6 +199,13 @@ h3#references {
   padding-top: 0.75em;
   box-shadow: 0px -2px 4px -4px var(--darken-color)
 }
+
+
+/******************************************************************************
+KaTeX styling
+******************************************************************************/
+
+.katex-display .tag {visibility: hidden}
 
 
 /******************************************************************************
@@ -247,28 +259,30 @@ Theorem labels
   font-style: normal;
 }
 
-.block-header::after {
+.block-label::after {
   content: ".";
   font-weight: bold;
 }
 
 
 /******************************************************************************
-Equation tags
+Label blocks
 ******************************************************************************/
 
-.equation {
+.labeled.block {margin: 1em 0}
+.labeled.block .type {display: none}
+.labeled.block .numbering {font-weight: normal}
+.labeled.block .numbering::before {content: "("}
+.labeled.block .numbering::after {content: ")"}
+.labeled.block .block-label::after {content: none}
+
+.labeled.block p {margin: 0}
+.labeled.block .katex-display {margin: 0}
+.labeled.block .block-label {
   float: right;
   position: relative;
-  margin-left: 1ex;
-  top: -2.4em
+  top: 0
 }
-
-.equation .type,
-.equation .desc {display: none}
-
-.equation .numbering::before {content: "("}
-.equation .numbering::after {content: ")"}
 
 
 /******************************************************************************

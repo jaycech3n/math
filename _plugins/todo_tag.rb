@@ -9,7 +9,7 @@ module Jekyll
     def render(context)
       # style .todo in any available css
       "<span class='todo tag'"\
-      "#{" data-text='—#{@text}'" unless @text.blank?}"\
+      "#{" data-text=\"—#{@text}\"" unless @text.blank?}"\
       " tabindex=0><span>todo</span></span>"
     end
   end

@@ -1,4 +1,4 @@
-I"�)<h1 id="reedy-fibrations">Reedy fibrations</h1>
+I"�,<h1 id="reedy-fibrations">Reedy fibrations</h1>
 
 <p>The first part of this explainer mostly follows <a class="citation" href="#shulman:2014:univalence">(Shulman, 2014)</a>.</p>
 
@@ -15,13 +15,13 @@ When this occurs outside of an explicitly type theoretic context, one should fee
 <h2 class="section" id="inverse-categories">Inverse categories</h2>
 
 <div class="definition block" id="inverse-category">
-  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="1">1</span><span class="desc">inverse category</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="1">1</span><span class="desc">inverse category</span></span>
 A binary relation $\prec$ may be placed on the collection of objects of any category $\mathcal C$ by defining $y \prec x$ if and only if there is an arrow $x \rightarrow y$ in $\mathcal C$.
 An <em>inverse category</em> $\mathcal I$ is one for which $\prec$ is well-founded.</p>
 </div>
 
 <div class="definition block" id="degree-rank">
-  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="2">2</span><span class="desc">degree/rank</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="2">2</span><span class="desc">degree/rank</span></span>
 Given an inverse category $\mathcal I$, we can define the <em>degree</em> aka <em>rank $\rho(x)$ of an object $x$</em> of $\mathcal I$ by well-founded recursion in the usual way:
 \[
   \rho(x) \coloneqq \sup_{y \, \prec \, x} \big( \rho(y) + 1 \big).
@@ -36,7 +36,7 @@ The <em>rank $\rho(\mathcal I)$ of $\mathcal I$</em> itself is then
 We may always assume that $\rho$ is of the form given in definition <a href="#degree-rank" class="ref">2</a>.</p>
 
 <div class="definition block" id="truncated-inverse-category">
-  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="3">3</span><span class="desc">truncated inverse category</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="3">3</span><span class="desc">truncated inverse category</span></span>
 For an inverse category $\mathcal I$ and $x \in \mathcal I$, the <em>$x$-truncated category $\Ix$</em> is the full subcategory of $\mathcal I$ on objects $y \prec x$.
 We also use $\Iex$ to denote the full subcategory on $\Ix \cup \{x\}$, but do not bother to give it a name.</p>
 </div>
@@ -44,14 +44,14 @@ We also use $\Iex$ to denote the full subcategory on $\Ix \cup \{x\}$, but do no
 <h2 class="section" id="diagrams-on-inverse-categories">Diagrams on inverse categories</h2>
 
 <div class="notation block">
-  <p><span class="block-header"><span class="type">notation</span><span class="numbering" id="4">4</span></span>
+  <p><span class="block-label"><span class="type">notation</span><span class="numbering" id="4">4</span></span>
 For a category $\mathcal C$ and $x \in \mathcal C$, let
-<span class="antex"><img data-antex="a3c32dc5748e5a64901f2af86cff4b1a" src="/math/antex/a3c32dc5748e5a64901f2af86cff4b1a.svg" /></span>
+<span class="antex"><img data-antex="71b989691f3631a51bf4071707d4f561" src="/math/antex/71b989691f3631a51bf4071707d4f561.svg" /></span>
 denote the full subcategory of
-<span class="antex"><img data-antex="8a1d9e69c15653a3d2a246038bb36641" src="/math/antex/8a1d9e69c15653a3d2a246038bb36641.svg" /></span>
+<span class="antex"><img data-antex="8b9e71b24e422d0259918b30953fb2ea" src="/math/antex/8b9e71b24e422d0259918b30953fb2ea.svg" /></span>
 without the object $\mathrm{1}_x \colon x \rightarrow x$.
 Note that for an inverse category $\mathcal I$ and $x \in \mathcal I$ there is the canonical “codomain” forgetful functor
-<span class="antex"><img data-antex="006bfea7cf1d2c1751fbb11f57cb7d00" src="/math/antex/006bfea7cf1d2c1751fbb11f57cb7d00.svg" /></span>.</p>
+<span class="antex"><img data-antex="a2faf2f25f74457cfebbe7a16314efb7" src="/math/antex/a2faf2f25f74457cfebbe7a16314efb7.svg" /></span>.</p>
 </div>
 
 <p>Suppose we have a category $\mathcal C$, an inverse category $\mathcal I$ and a diagram $A_{\prec x} \colon \mathcal{I}_{\prec x} \rightarrow \mathcal C$ on the truncated inverse category.
@@ -60,16 +60,16 @@ By unfolding definitions, we can see that (the data of) extensions of $A_{\prec 
   A_{\preceq x} \colon \Iex \rightarrow \mathcal C
 \]
 are equivalently cones over
-<span class="antex display"><img data-antex="062e620bdbe4cc775e1e0108c9f80e07" src="/math/antex/062e620bdbe4cc775e1e0108c9f80e07.svg" /></span>
+<span class="antex display"><img data-antex="582a489f1218cd5778237ca6751dd0f3" src="/math/antex/582a489f1218cd5778237ca6751dd0f3.svg" /></span>
 which are equivalently maps into
-<span class="antex display"><img data-antex="ecd5150d12297ba57b5d763a5d23840a" src="/math/antex/ecd5150d12297ba57b5d763a5d23840a.svg" /></span>
+<span class="antex display"><img data-antex="78c2486a6dd3b92e8e576e4a71c22373" src="/math/antex/78c2486a6dd3b92e8e576e4a71c22373.svg" /></span>
 provided this limit exists.</p>
 
 <div class="definition block" id="matching-object">
-  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="5">5</span><span class="desc">matching object</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="5">5</span><span class="desc">matching object</span></span>
 Suppose we have a category $\mathcal C$, inverse category $\mathcal I$ and diagram $A \colon \mathcal J \rightarrow \mathcal C$ where $\mathcal J \subseteq \mathcal I$ is a subcategory containing $\Ix$.
 The <em>matching object $M_xA$ (of $A$, on “level” $x$)</em> is the limit
-<span class="antex display"><img data-antex="7190e628ffaa5f8c59cc6cd23ef7c9ed" src="/math/antex/7190e628ffaa5f8c59cc6cd23ef7c9ed.svg" /></span>
+<span class="antex display"><img data-antex="a95725793df3b3f0da07cba65d9b7c0c" src="/math/antex/a95725793df3b3f0da07cba65d9b7c0c.svg" /></span>
 if it exists.</p>
 </div>
 
@@ -86,13 +86,17 @@ Then we can again check that extensions of $f_{\prec x}$ to maps
   f_{\preceq x} \colon A_{\preceq x} \rightarrow B_{\preceq x}
 \]
 are equivalently lids of the square
-<span class="antex display"><img data-antex="da54d0c7f813d55cc2063698da587375" src="/math/antex/da54d0c7f813d55cc2063698da587375.svg" /></span>
-(where the walls and base are the evident arrows), which are equivalently arrows
+<span class="antex display"><img data-antex="ffc66bee8bd022a9be042ac337a46c2c" src="/math/antex/ffc66bee8bd022a9be042ac337a46c2c.svg" /></span>
+(where the walls and base are the evident arrows), which are equivalently arrows</p>
+<div class="labeled block" id="eqn-pullback-map">
+  <p><span class="block-label"><span class="type">labeled</span><span class="numbering" id="6">6</span></span>
 \[
   A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x
-\] <span class="equation" id="eqn-pullback-map"><span class="type">equation</span><span class="numbering" id="6">6</span><span class="desc">eqn:pullback-map</span></span>
-such that
-<span class="antex display"><img data-antex="d2609b105add3b08f108305b9c374619" src="/math/antex/d2609b105add3b08f108305b9c374619.svg" /></span>
+\]</p>
+</div>
+
+<p>such that
+<span class="antex display"><img data-antex="9f23b34ac79df50623084d6bcef0efa7" src="/math/antex/9f23b34ac79df50623084d6bcef0efa7.svg" /></span>
 commutes, provided that the pullback exists.</p>
 
 <p>To summarize: if an inverse diagram $A \colon \mathcal{C}^{\mathcal I}$ has all matching objects, then it has a simple and uniform recursive description in terms of maps into $M_xA$ for all $x \in \mathcal I$ (note that $M_xA$ is always terminal for $\prec$-minimal $x$).
@@ -105,11 +109,11 @@ We’ll come back to discuss this idea shortly.</p>
 
 <p>Recall the definition of a <em>type-theoretic fibration category</em> <a class="citation" href="#shulman:2014:univalence">(Shulman, 2014, 2.1)</a>.
 In particular, these are equipped with a terminal object
-<span class="antex"><img data-antex="43bfb871712d55fdbd135346b2006a5c" src="/math/antex/43bfb871712d55fdbd135346b2006a5c.svg" /></span>
+<span class="antex"><img data-antex="ab2bd7a9cf84ba0ac9ea15899b1c0fd3" src="/math/antex/ab2bd7a9cf84ba0ac9ea15899b1c0fd3.svg" /></span>
 and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of <em>fibrations</em> (containing all terminal arrows and isomorphisms, closed under pullbacks, etc.) interpreting types-in-context.</p>
 
 <div class="definition block" id="reedy-fibration">
-  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="7">7</span><span class="desc">Reedy fibration</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="7">7</span><span class="desc">Reedy fibration</span></span>
 Let $\mathcal C$ be a type theoretic fibration category and $\mathcal I$ an inverse category.
 A <em>Reedy fibration</em> $f \colon A \rightarrow B$ between diagrams $A,\ B \colon \mathcal{C}^{\mathcal I}$ is one where:</p>
   <ul>
@@ -119,24 +123,30 @@ A <em>Reedy fibration</em> $f \colon A \rightarrow B$ between diagrams $A,\ B \c
 </div>
 
 <div class="definition block" id="reedy-fibrant-diagram">
-  <p><span class="block-header"><span class="type">definition</span><span class="numbering" id="8">8</span><span class="desc">Reedy fibrant diagram</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="8">8</span><span class="desc">Reedy fibrant diagram</span></span>
 A <em>Reedy fibrant diagram</em> $A \colon \mathcal{C}^{\mathcal I}$ is one for which the terminal arrow
-<span class="antex"><img data-antex="8ba8accefc52391da7e0d3aeeb664bd4" src="/math/antex/8ba8accefc52391da7e0d3aeeb664bd4.svg" /></span>
+<span class="antex"><img data-antex="033875f1adb3759d2d6e0d0e135a210e" src="/math/antex/033875f1adb3759d2d6e0d0e135a210e.svg" /></span>
 is a Reedy fibration.
 Equivalently, it’s one with all matching objects and such that $A_x \rightarrow M_xA$ is a fibration for all $x$.
 Note that the terminal diagram
-<span class="antex"><img data-antex="4a9ef8222879b3c901864a074590b263" src="/math/antex/4a9ef8222879b3c901864a074590b263.svg" /></span>
+<span class="antex"><img data-antex="e8bcfd4c1a1aaa5814483fef21db3739" src="/math/antex/e8bcfd4c1a1aaa5814483fef21db3739.svg" /></span>
 is itself Reedy fibrant.</p>
 </div>
 
 <div class="remark block">
-  <p><span class="block-header"><span class="type">remark</span><span class="numbering" id="9">9</span></span>
+  <p><span class="block-label"><span class="type">remark</span><span class="numbering" id="9">9</span></span>
 The extra fibrancy requirement on the map into the pullback in definition <a href="#reedy-fibration" class="ref">7</a> ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.</p>
 </div>
 
 <h2 class="section" id="type-valued-reedy-fibrant-diagrams">Type-valued Reedy fibrant diagrams</h2>
 
-<p><span class="todo tag" tabindex="0"><span>todo</span></span></p>
+<p>Now fix an inverse category $\mathcal I$ and ask for $\mathcal I$-diagrams in $\Type$,
+i.e. presheaves $A \colon \Type^\mathcal{I}$ valued in the category of types and functions of a type theory with $\Pi$, strong $\Sigma$, and unit types.</p>
+
+<p>At this level of generality, it’s not yet known how—or indeed, if it’s even possible—to perform such constructions type-theoretically.
+Certainly there is no hope if we ask for <em>strict</em> diagrams, so we should look instead for the correct notion “up to homotopy”.</p>
+
+<p><span class="todo tag" data-text="—1 • Explain what a strict diagram is in this context and why the construction of such are not possible in general.   2 • Possible for diagrams over finite inverse categories; explain.   3 • Conjecture: recursive inverse categories.   4 • Limits of Reedy fibrant diagrams." tabindex="0"><span>todo</span></span></p>
 
 <h3 id="references">References</h3>
 

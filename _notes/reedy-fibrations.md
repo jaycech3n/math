@@ -3,11 +3,13 @@ katex:
   macros:
     "\\Ix": "\\mathcal{I}_{\\prec x}"
     "\\Iex": "\\mathcal{I}_{\\preceq x}"
+    "\\Type": "\\mathrm{Type}"
 antex:
   preamble:
     \usepackage{amsmath,amsfonts,mathtools,stmaryrd,tikz-cd,bbm}
     \newcommand{\Ix}{\mathcal{I}_{\prec x}}
     \newcommand{\Iex}{\mathcal{I}_{\preceq x}}
+    \newcommand{\Type}{\mathrm{Type}}
     \newcommand{\coslicecat}[2]{\vphantom{x}^{#1/\!}#2}
     \newcommand{\ccoslicecat}[2]{\vphantom{x}^{#1\sslash\!}#2}
 
@@ -111,14 +113,19 @@ Then we can again check that extensions of $f_{\prec x}$ to maps
 are equivalently lids of the square
 {% tex classes: [antex,display] %}
 \begin{tikzcd}
-  A_x \ar[d] \ar[r, dashrightarrow] \ar[dr, phantom, "\circ" marking] & B_x \ar[d] \\
-  M_xA \ar[r]                  & M_xB
+  A_x \ar[d]
+      \ar[r, dashrightarrow]
+      \ar[dr, phantom, "\circ" marking] & B_x \ar[d] \\
+  M_xA \ar[r]                           & M_xB
 \end{tikzcd}
 {% endtex %}
 (where the walls and base are the evident arrows), which are equivalently arrows
+{% labeled eqn:pullback-map %}
 \\[
   A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x
-\\] {% equation eqn:pullback-map %}
+\\]
+{% endlabeled %}
+
 such that
 {% tex classes: [antex,display] %}
 \begin{tikzcd}[row sep=small, column sep=tiny]
@@ -166,7 +173,18 @@ The extra fibrancy requirement on the map into the pullback in definition {% ref
 
 {% section Type-valued Reedy fibrant diagrams %}
 
-{% todo %}
+Now fix an inverse category $\mathcal I$ and ask for $\mathcal I$-diagrams in $\Type$,
+i.e. presheaves $A \colon \Type^\mathcal{I}$ valued in the category of types and functions of a type theory with $\Pi$, strong $\Sigma$, and unit types.
+
+At this level of generality, it's not yet known how---or indeed, if it's even possible---to perform such constructions type-theoretically.
+Certainly there is no hope if we ask for *strict* diagrams, so we should look instead for the correct notion "up to homotopy".
+
+{% TODO
+  1 • Explain what a strict diagram is in this context and why the construction of such are not possible in general.
+  2 • Possible for diagrams over finite inverse categories; explain.
+  3 • Conjecture: recursive inverse categories.
+  4 • Limits of Reedy fibrant diagrams. 
+%}
 
 
 ### References

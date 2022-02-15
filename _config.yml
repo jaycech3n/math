@@ -20,6 +20,7 @@ katex:
     - {left: "$", right: "$", display: false}
     - {left: "\\(", right: "\\)", display: false}
     - {left: "\\[", right: "\\]", display: true}
+    - {left: "\\begin{align}", right: "\\end{align}", display: true}
 
 antex:
   url_path_prefix: *baseurl
