@@ -385,6 +385,7 @@ Responsive
   }
   nav a {margin-right: 1ex}
   main h1 {margin-top: 1em}
+  .proof.block::after {margin-left: 97.5%}
 }
 
 @media screen and (max-width: 800px) {
