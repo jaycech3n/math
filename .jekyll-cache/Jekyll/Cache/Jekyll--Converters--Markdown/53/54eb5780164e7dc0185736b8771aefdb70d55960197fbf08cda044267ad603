@@ -1,4 +1,4 @@
-I"�,<h1 id="reedy-fibrations">Reedy fibrations</h1>
+I"4<h1 id="reedy-fibrations">Reedy fibrations</h1>
 
 <p>The first part of this explainer mostly follows <a class="citation" href="#shulman:2014:univalence">(Shulman, 2014)</a>.</p>
 
@@ -12,16 +12,16 @@ When this occurs outside of an explicitly type theoretic context, one should fee
 
 <p><span class="todo tag" data-text="—collect notational conventions on a single page?" tabindex="0"><span>todo</span></span></p>
 
-<h2 class="section" id="inverse-categories">Inverse categories</h2>
+<h2 class="section" id="inverse-categories"><span class="numbering" id="1">1</span>Inverse categories</h2>
 
 <div class="definition block" id="inverse-category">
-  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="1">1</span><span class="desc">inverse category</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="1.1">1.1</span><span class="desc">inverse category</span></span>
 A binary relation $\prec$ may be placed on the collection of objects of any category $\mathcal C$ by defining $y \prec x$ if and only if there is an arrow $x \rightarrow y$ in $\mathcal C$.
 An <em>inverse category</em> $\mathcal I$ is one for which $\prec$ is well-founded.</p>
 </div>
 
 <div class="definition block" id="degree-rank">
-  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="2">2</span><span class="desc">degree/rank</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="1.2">1.2</span><span class="desc">degree/rank</span></span>
 Given an inverse category $\mathcal I$, we can define the <em>degree</em> aka <em>rank $\rho(x)$ of an object $x$</em> of $\mathcal I$ by well-founded recursion in the usual way:
 \[
   \rho(x) \coloneqq \sup_{y \, \prec \, x} \big( \rho(y) + 1 \big).
@@ -33,18 +33,18 @@ The <em>rank $\rho(\mathcal I)$ of $\mathcal I$</em> itself is then
 </div>
 
 <p>Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree—i.e. $\rho(y) &lt; \rho(x)$.
-We may always assume that $\rho$ is of the form given in definition (<a href="#degree-rank" class="ref">2</a>).</p>
+We may always assume that $\rho$ is of the form given in definition (<a href="#degree-rank" class="ref">1.2</a>).</p>
 
 <div class="definition block" id="truncated-inverse-category">
-  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="3">3</span><span class="desc">truncated inverse category</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="1.3">1.3</span><span class="desc">truncated inverse category</span></span>
 For an inverse category $\mathcal I$ and $x \in \mathcal I$, the <em>$x$-truncated category $\Ix$</em> is the full subcategory of $\mathcal I$ on objects $y \prec x$.
 We also use $\Iex$ to denote the full subcategory on $\Ix \cup \{x\}$, but do not bother to give it a name.</p>
 </div>
 
-<h2 class="section" id="diagrams-on-inverse-categories">Diagrams on inverse categories</h2>
+<h2 class="section" id="diagrams-on-inverse-categories"><span class="numbering" id="2">2</span>Diagrams on inverse categories</h2>
 
 <div class="notation block">
-  <p><span class="block-label"><span class="type">notation</span><span class="numbering" id="4">4</span></span>
+  <p><span class="block-label"><span class="type">notation</span><span class="numbering" id="2.1">2.1</span></span>
 For a category $\mathcal C$ and $x \in \mathcal C$, let
 <span class="antex"><img data-antex="71b989691f3631a51bf4071707d4f561" src="/math/antex/71b989691f3631a51bf4071707d4f561.svg" /></span>
 denote the full subcategory of
@@ -66,7 +66,7 @@ which are equivalently maps into
 provided this limit exists.</p>
 
 <div class="definition block" id="matching-object">
-  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="5">5</span><span class="desc">matching object</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="2.2">2.2</span><span class="desc">matching object</span></span>
 Suppose we have a category $\mathcal C$, inverse category $\mathcal I$ and diagram $A \colon \mathcal J \rightarrow \mathcal C$ where $\mathcal J \subseteq \mathcal I$ is a subcategory containing $\Ix$.
 The <em>matching object $M_xA$ (of $A$, on “level” $x$)</em> is the limit
 <span class="antex display"><img data-antex="a95725793df3b3f0da07cba65d9b7c0c" src="/math/antex/a95725793df3b3f0da07cba65d9b7c0c.svg" /></span>
@@ -89,7 +89,7 @@ are equivalently lids of the square
 <span class="antex display"><img data-antex="ffc66bee8bd022a9be042ac337a46c2c" src="/math/antex/ffc66bee8bd022a9be042ac337a46c2c.svg" /></span>
 (where the walls and base are the evident arrows), which are equivalently arrows</p>
 <div class="labeled block" id="eqn-pullback-map">
-  <p><span class="block-label"><span class="type">labeled</span><span class="numbering" id="6">6</span></span>
+  <p><span class="block-label"><span class="type">labeled</span><span class="numbering" id="2.3">2.3</span></span>
 \[
   A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x
 \]</p>
@@ -101,7 +101,7 @@ commutes, provided that the pullback exists.</p>
 
 <p>To summarize: if an inverse diagram $A \colon \mathcal{C}^{\mathcal I}$ has all matching objects, then it has a simple and uniform recursive description in terms of maps into $M_xA$ for all $x \in \mathcal I$ (note that $M_xA$ is always terminal for $\prec$-minimal $x$).
 Similarly, maps between inverse diagrams $A$, $B$ with all matching objects also have a uniform description in terms of maps in the sense of
-(<a href="#eqn-pullback-map" class="ref">6</a>),
+(<a href="#eqn-pullback-map" class="ref">2.3</a>),
 assuming the pullback exists in $\mathcal C$.</p>
 
 <p>Part of the appeal of these properties is that they suggest the possibility of encoding, for fixed $\mathcal I$, the <em>type</em> of such $\mathcal I$-diagrams and maps between them (possibly subject to additional conditions).
@@ -113,17 +113,17 @@ In particular, these are equipped with a terminal object
 and a class $\mathfrak F \subseteq \mathrm{mor}(\mathcal C)$ of <em>fibrations</em> (containing all terminal arrows and isomorphisms, closed under pullbacks, etc.) interpreting types-in-context.</p>
 
 <div class="definition block" id="reedy-fibration">
-  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="7">7</span><span class="desc">Reedy fibration</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="2.4">2.4</span><span class="desc">Reedy fibration</span></span>
 Let $\mathcal C$ be a type theoretic fibration category and $\mathcal I$ an inverse category.
 A <em>Reedy fibration</em> $f \colon A \rightarrow B$ between diagrams $A,\ B \colon \mathcal{C}^{\mathcal I}$ is one where:</p>
   <ul>
     <li>$A$ and $B$ have all matching objects,</li>
-    <li>for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed in (<a href="#eqn-pullback-map" class="ref">6</a>) is a fibration.</li>
+    <li>for all $x \in \mathcal I$, $M_xA \times_{M_xB} B_x$ exists and the map $A_x \xrightarrow{f_x} M_xA \times_{M_xB} B_x$ discussed in (<a href="#eqn-pullback-map" class="ref">2.3</a>) is a fibration.</li>
   </ul>
 </div>
 
 <div class="definition block" id="reedy-fibrant-diagram">
-  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="8">8</span><span class="desc">Reedy fibrant diagram</span></span>
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="2.5">2.5</span><span class="desc">Reedy fibrant diagram</span></span>
 A <em>Reedy fibrant diagram</em> $A \colon \mathcal{C}^{\mathcal I}$ is one for which the terminal arrow
 <span class="antex"><img data-antex="033875f1adb3759d2d6e0d0e135a210e" src="/math/antex/033875f1adb3759d2d6e0d0e135a210e.svg" /></span>
 is a Reedy fibration.
@@ -134,19 +134,39 @@ is itself Reedy fibrant.</p>
 </div>
 
 <div class="remark block">
-  <p><span class="block-label"><span class="type">remark</span><span class="numbering" id="9">9</span></span>
-The extra fibrancy requirement on the map into the pullback in definition (<a href="#reedy-fibration" class="ref">7</a>) ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.</p>
+  <p><span class="block-label"><span class="type">remark</span><span class="numbering" id="2.6">2.6</span></span>
+The extra fibrancy requirement on the map into the pullback in definition (<a href="#reedy-fibration" class="ref">2.4</a>) ensures that we can place a type theoretic fibration structure on the category of Reedy fibrant diagrams and Reedy fibrations, and thus construct new models of type theory in such diagrams.</p>
 </div>
 
-<h2 class="section" id="type-valued-reedy-fibrant-diagrams">Type-valued Reedy fibrant diagrams</h2>
+<h2 class="section" id="type-valued-reedy-fibrant-diagrams"><span class="numbering" id="3">3</span>Type-valued Reedy fibrant diagrams</h2>
 
 <p>Now fix an inverse category $\mathcal I$ and ask for $\mathcal I$-diagrams in $\Type$,
 i.e. presheaves $A \colon \Type^\mathcal{I}$ valued in the category of types and functions of a type theory with $\Pi$, strong $\Sigma$, and unit types.</p>
 
 <p>At such a level of generality, it’s not yet known how to perform such constructions type-theoretically, or indeed, if it’s even possible.
-Certainly there’s no hope if we’re asking for <em>strict</em> diagrams, so we should look instead for the correct notion “up to homotopy”.</p>
+Certainly there’s no hope if we’re asking for <em>strict</em> diagrams <span class="todo tag" data-text="—brief cardinality argument for why these are not generally doable" tabindex="0"><span>todo</span></span>,
+so we should look instead for the correct notion “up to homotopy”.</p>
 
-<p><span class="todo tag" data-text="—1 • Explain what a strict diagram is in this context and why the construction of such are not possible in general.   2 • Possible for diagrams over finite inverse categories; explain.   3 • Conjecture: recursive inverse categories.   4 • Limits of Reedy fibrant diagrams." tabindex="0"><span>todo</span></span></p>
+<p><span class="todo tag" data-text="—possible for diagrams over finite inverse categories; explain" tabindex="0"><span>todo</span></span>
+<em>Everything below this is draft.</em></p>
+
+<div class="proposition block">
+  <p><span class="block-label"><span class="type">proposition</span><span class="numbering" id="3.1">3.1</span></span>
+The homotopy matching object of $A$ at $x$ (i.e. the limit
+<span class="antex"><img data-antex="5e9e23e94a970c201ac1e5656291c1a0" src="/math/antex/5e9e23e94a970c201ac1e5656291c1a0.svg" /></span>
+satisfying the commutation conditions up to propositional equality) is given by
+<span class="antex display"><img data-antex="0e5c463400f4217d8077f38759cf2b54" src="/math/antex/0e5c463400f4217d8077f38759cf2b54.svg" /></span></p>
+</div>
+
+<div class="discussion block">
+  <p><span class="block-label"><span class="type">discussion</span><span class="numbering" id="3.2">3.2</span></span>
+The expression above is written in a strange mix of type theoretic and traditional math notation; while one could (as we have) fix the setting more specifically and refine the notation, I would like to suggest the viewpoint that we are gradually passing from the external categorical/model-theoretic language into constructions that can be entirely expressed in the internal language.
+For instance, one could potentially ask for $\vec{\upsilon}$ in an “infinitary sigma type” over <span class="antex"><img data-antex="83c821a9f14ce72f3745df1c37a6bf12" src="/math/antex/83c821a9f14ce72f3745df1c37a6bf12.svg" /></span> when this excised coslice is not finite, by which one might mean a suitable limit in the external categorical model.</p>
+</div>
+
+<p>If $\mathcal{I}_{\prec x}$ is <em>finite</em>, then we can strictify the matching objects:</p>
+
+<p><span class="todo tag" data-text="—limits of Reedy fibrant diagrams" tabindex="0"><span>todo</span></span></p>
 
 <h3 id="references">References</h3>
 

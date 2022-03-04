@@ -267,6 +267,10 @@ Theorem blocks
 .lemma.block,
 .proposition.block {font-style: italic}
 
+.theorem.block,
+.lemma.block,
+.proposition.block p em {font-style: normal}
+
 .proof.block .type {
   font-style: italic;
   font-weight: normal
