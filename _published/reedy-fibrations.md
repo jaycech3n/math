@@ -31,12 +31,12 @@ When this occurs outside of an explicitly type theoretic context, one should fee
 
 {% section Inverse categories %}
 
-{% definition inverse category %}
+{% definition Inverse category %}
 A binary relation $\prec$ may be placed on the collection of objects of any category $\mathcal C$ by defining $y \prec x$ if and only if there is an arrow $x \rightarrow y$ in $\mathcal C$.
 An *inverse category* $\mathcal I$ is one for which $\prec$ is well-founded.
 {% enddefinition %}
 
-{% definition degree/rank %}
+{% definition Degree/rank %}
 Given an inverse category $\mathcal I$, we can define the *degree* aka *rank $\rho(x)$ of an object $x$* of $\mathcal I$ by well-founded recursion in the usual way:
 \\[
   \rho(x) \coloneqq \sup_{y \, \prec \, x} \big( \rho(y) + 1 \big).
@@ -50,7 +50,7 @@ The *rank $\rho(\mathcal I)$ of $\mathcal I$* itself is then
 Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree---i.e. $\rho(y) < \rho(x)$.
 We may always assume that $\rho$ is of the form given in definition ({% ref degree/rank %}).
 
-{% definition truncated inverse category %}
+{% definition Truncated inverse category %}
 For an inverse category $\mathcal I$ and $x \in \mathcal I$, the *$x$-truncated category $\Ix$* is the full subcategory of $\mathcal I$ on objects $y \prec x$.
 We also use $\Iex$ to denote the full subcategory on $\Ix \cup \\{x\\}$, but do not bother to give it a name.
 {% enddefinition %}
@@ -87,7 +87,7 @@ $
 {% endtex %}
 provided this limit exists.
 
-{% definition matching object %}
+{% definition Matching object %}
 Suppose we have a category $\mathcal C$, inverse category $\mathcal I$ and diagram $A \colon \mathcal J \rightarrow \mathcal C$ where $\mathcal J \subseteq \mathcal I$ is a subcategory containing $\Ix$.
 The *matching object $M_xA$ (of $A$, on "level" $x$)* is the limit
 {% tex classes: [antex,display] %}

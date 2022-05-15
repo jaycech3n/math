@@ -204,8 +204,10 @@ h3#references {
 
 
 /******************************************************************************
-Display math styling
+Math styling
 ******************************************************************************/
+
+.katex {font-size: 1.1em !important}
 
 .katex-display,
 .antex.display {

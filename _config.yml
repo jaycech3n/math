@@ -65,7 +65,9 @@ defaults:
       theorem-numbers: true
 
 collections:
+  published:
+    output: true
+    permalink: :name
   notes:
     output: true
     permalink: :name
-

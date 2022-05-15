@@ -18,7 +18,7 @@
   <main>
     {{ content }}
     <ul class="notes">
-    {% for note in site.notes %}
+    {% for note in site.published %}
       <li><a href="{{ note.url | relative_url }}">{{ note.title }}</a></li>
     {% endfor %}
     </ul>
