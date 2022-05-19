@@ -342,6 +342,7 @@ p .tag {
 }
 
 .tag.todo {
+  font-style: normal;
   font-weight: bold;
   background-color: var(--attn-color);
   box-shadow: 0px 4px 4px -4px var(--attn-color);

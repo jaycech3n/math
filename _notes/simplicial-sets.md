@@ -142,7 +142,7 @@ Claim: if this horn is *inner* then there's one way to (re)construct an $(n-1)$-
 \\[ c_0 \rightarrow \dotsb \rightarrow c_{i-1} \xrightarrow{?} c_{i+1} \rightarrow \dotsb \rightarrow c_n \\]
 compatible with the face maps, basically because the $1$-simplices are all known. Then the $n$-chain of all these arrows is the unique chain filling the horn.
 
-Conversely, given $K$ that uniquely fills inner horns, form $\mathcal C$ from $K$ by setting $\mathrm{ob}(\mathcal C) = K_0$ and $\mathrm{arr}(\mathcal C) = K_1$.
+Conversely, given that $K$ uniquely fills inner horns, form $\mathcal C$ from $K$ by setting $\mathrm{ob}(\mathcal C) = K_0$ and $\mathrm{arr}(\mathcal C) = K_1$.
 As previously discussed, the identity and composition structures follow from the degeneracies, $K_2$ and $K_3$, and well-definedness is a consequence of unique horn fillers.
 
 Then we have a map $K \rightarrow N(\mathcal C)$, essentially by construction, and can show it's an isomorphism.

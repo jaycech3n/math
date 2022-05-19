@@ -54,6 +54,15 @@
 			"{% enddefinition %}"
 		]
 	},
+	"Theorem": {
+		"scope": "markdown",
+		"prefix": ["%thm", "%theorem"],
+		"body": [
+			"{% theorem $1%}",
+			"$2",
+			"{% endtheorem %}"
+		]
+	},
 	"Lemma": {
 		"scope": "markdown",
 		"prefix": ["%lem", "%lemma"],
@@ -61,6 +70,24 @@
 			"{% lemma $1%}",
 			"$2",
 			"{% endlemma %}"
+		]
+	},
+	"Proposition": {
+		"scope": "markdown",
+		"prefix": ["%prop", "%proposition"],
+		"body": [
+			"{% proposition $1%}",
+			"$2",
+			"{% endproposition %}"
+		]
+	},
+	"Proof": {
+		"scope": "markdown",
+		"prefix": ["%prf", "%proof"],
+		"body": [
+			"{% proof %}",
+			"$1",
+			"{% endproof %}"
 		]
 	},
 	"Remark": {
