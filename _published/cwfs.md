@@ -47,7 +47,7 @@ We use the following proposition, easily checked:
 Let {% tex %}$P \colon \mathcal D^{\op} \rightarrow \Set${% endtex %} be a presheaf on $\mathcal D$.
 Then any functor {% tex %}$F \colon \mathcal C^{\op} \rightarrow \mathcal D^{\op}${% endtex %} induces a functor
 \\[ \int_{\mathcal C} P \circ F \xrightarrow{F^\ast} \int_{\mathcal D} P \\]
-on the categories of elements, given by "reindexing" the base. {% todo What's the standard terminology? I don't know. %}
+on the categories of elements, given by "reindexing". {% todo What's the standard terminology? I don't know. %}
 That is,
 {% tex classes: [antex,display] %}
 $
