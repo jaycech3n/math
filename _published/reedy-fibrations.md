@@ -47,7 +47,7 @@ The *rank $\rho(\mathcal I)$ of $\mathcal I$* itself is then
 \\]
 {% enddefinition %}
 
-Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \lambda \rightarrow \mathrm{ob}(\mathcal I)$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree---i.e. $\rho(y) < \rho(x)$.
+Equivalently, an inverse category $\mathcal I$ is one for which there is an ordinal $\lambda$ together with a rank function $\rho \colon \mathrm{ob}(\mathcal I) \rightarrow \lambda$, such that any nonidentity arrow $f \colon x \rightarrow y$ strictly lowers degree---i.e. $\rho(y) < \rho(x)$.
 We may always assume that $\rho$ is of the form given in definition ({% ref degree/rank %}).
 
 {% definition Truncated inverse category %}
