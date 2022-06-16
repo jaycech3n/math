@@ -1,0 +1,168 @@
+\documentclass[a4paper]{article}
+
+\usepackage[top=2.5cm, bottom=3cm]{geometry}
+
+\usepackage{amsmath, amssymb, mathtools}
+
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\Mono}{\mathrm{Mono}}
+\newcommand{\Sub}{\mathrm{Sub}}
+
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{corollary}{Corollary}[theorem]
+
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{eg}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+
+\usepackage{tikz-cd}
+
+\newsavebox{\pullback}
+\sbox\pullback{%
+\begin{tikzpicture}%
+\draw (0,0) -- (1ex,0ex);%
+\draw (1ex,0ex) -- (1ex,1ex);%
+\end{tikzpicture}}
+
+\title{
+    Subobject Classifiers \\[1ex]
+    \normalsize Following \\[0.5ex]
+    \emph{Sheaves in Geometry and Logic} \\
+    Chapter I, Sections 3 \& 4
+}
+\author{\normalsize Guide: Josh Chen}
+\date{\normalsize 17 June '22 \\ Notts-Bergen SGL reading group meeting}
+
+\begin{document}
+
+\maketitle
+
+We begin with the ur-example.
+Recall that in $\Set$, for any $A \subseteq S$ we have
+\[
+\begin{tikzcd}
+    A \ar[dr, phantom,
+          "\usebox\pullback",
+          very near start]
+      \ar[d, hook, swap, "i"]
+      \ar[r, "!"]             & * \ar[d, hook, "0"] \\
+    S \ar[r, swap, "\chi_A"]  & \{0,1\}
+\end{tikzcd}
+\]
+where
+\[
+    \chi_A(s) = \bigg\{
+    \begin{aligned}
+        & 0 \ \text{if}\ s \in A \\
+        & 1 \ \text{otherwise.}
+    \end{aligned}
+\]
+That is, the mono $A \xhookrightarrow{i} S$ is a pullback of the mono $* \xhookrightarrow{0} 2$ along the characteristic function $\chi_A$.
+From this we can already extract the ideas for the following two definitions:
+
+\begin{defn}
+    A \emph{subobject} of $X$ is an isomorphism class of monos into $X$.
+\end{defn}
+
+To elaborate: for any category $\mathcal C$ and $X \in \mathcal C$, the monos into $X$ form a full subcategory $\Mono_{\mathcal C}(X)$ of $\mathcal C/X$.
+This is a preorder, so ``being isomorphic'' is a property (not structure).
+Such an isomorphism class is a subobject.
+
+\begin{eg}
+    In $\Set$, $\{0,1\} \subset \{0,1,2\}$, and the inclusion $i \colon \{0,1\} \hookrightarrow \{0,1,2\}$ witnesses $\{0,1\}$ as a subobject of $\{0,1,2\}$.
+    But also the injection
+    \[ f \colon \{2,3\} \rightarrowtail \{0,1,2\}, \]
+    where $f(2) = 1$, $f(3) = 0$, represents (``is'') the same subobject.
+\end{eg}
+
+\begin{defn}
+    A \emph{subobject classifier} in a category $\mathcal C$ with terminal $\mathbf 1$ consists of an object $\Omega$ and a mono $\top \colon \mathbf 1 \rightarrow \Omega$,
+    such that any mono arises as the pullback of $\top$ along a unique arrow into $\Omega$.
+\end{defn}
+
+Explicitly: for any $X \in \mathcal C$ and mono $m \colon S \rightarrowtail X$, there's a unique \emph{characteristic map} $\chi_S \colon X \rightarrow \Omega$ making
+\[
+\begin{tikzcd}
+    S \ar[dr, phantom,
+          "\usebox\pullback",
+          very near start]
+      \ar[d, tail, swap, "m"]
+      \ar[r, "!"]             & \mathbf 1 \ar[d, tail, "\top"] \\
+    X \ar[r, dashed, swap, "\chi_S"]  & \Omega
+\end{tikzcd}
+\]
+a pullback.
+
+\begin{exercise}
+    If $T \rightarrowtail X$ represents the same subobject as $S \rightarrowtail X$ then
+    \[
+    \begin{tikzcd}
+        T \ar[dr, phantom,
+            "\usebox\pullback",
+            very near start]
+        \ar[d, tail]
+        \ar[r, "!"]             & \mathbf 1 \ar[d, tail, "\top"] \\
+        X \ar[r, dashed, swap, "\chi_S"]  & \Omega
+    \end{tikzcd}
+    \]
+    is also a pullback square.
+    That is, the characteristic map $\chi$ is the same for isomorphic monos.
+    This justifies the name ``subobject'' classifier (as opposed to ``mono'' classifier).
+\end{exercise}
+
+For every preorder $\lesssim$ we get a partial order by quotienting by
+\[ \sim \ \coloneqq \ (\lesssim \cap \gtrsim). \]
+Applying this to $\Mono_{\mathcal C}(X)$ gives $\Sub_{\mathcal C}(X)$, the class of subobjects of $X$ (in fact, this is a category, but we won't use this).
+So for every object $X$ we have a class $\Sub_{\mathcal C}(X)$ of subobjects of $X$.
+This is functorial: for $X \xrightarrow{f} Y$ we have the pullback map
+\[ f^* \colon \mathcal C/Y \rightarrow \mathcal C/X \]
+which restricts to
+\[ f^* \colon \Mono_{\mathcal C}(Y) \rightarrow \Mono_{\mathcal C}(X) \]
+(because pullbacks of monos are mono), and which further passes to the quotient
+\[ f^* \colon \Sub_{\mathcal C}(Y) \rightarrow \Sub_{\mathcal C}(X), \]
+acting via $f^*[g] = [f^*g]$ (one can check that this is well defined).
+The upshot is that
+\[ \Sub_{\mathcal C} \colon \mathcal C^{op} \rightarrow \Set \]
+is a (possibly large) presheaf on $\mathcal C$.
+
+\begin{defn}
+    $\mathcal C$ is \emph{well powered} if for all $X \in \mathcal C$, $\Sub_{\mathcal C}(X)$ is small.
+\end{defn}
+
+What's the significance of all this to subobject classifiers?
+Well, the definition of a subobject classifier as
+\begin{quote}
+    ``A mono $\mathbf 1 \xrightarrow{\top} \Omega$ (representing a subobject), such that every subobject (represented by) $S \xrightarrow{m} X$ arises uniquely as a pullback of $\top$''     
+\end{quote}
+amounts to saying that
+\[ \hom(X , \Omega) \cong \Sub_{\mathcal C}(X) \]
+as classes---and furthermore, by properties of pullback, this isomorphism ends up being natural in $X$.
+That is, the (target of the) subobject classifier $\Omega$ is a representing object for the subobject functor.
+The converse is also true.
+
+\begin{prop}[Proposition 1, SGL I\S3]
+    A locally small category $\mathcal C$ with terminal object and ``enough'' pullbacks has a subobject classifier if and only if
+    \[ \Sub_{\mathcal C} \colon \mathcal C^{op} \rightarrow \Set \]
+    is representable.
+\end{prop}
+\begin{proof}
+    In meeting. Maybe I'll type it up later.
+\end{proof}
+
+\begin{corollary}
+    A locally small category with subobject classifier is well powered.\footnote{i.e.\ each object has set-many subobjects, which I think means (later) that the power object is nice and can be defined.}
+\end{corollary}
+
+\begin{corollary}
+    Subobject classifiers are unique up to isomorphism.
+\end{corollary}
+
+\end{document}

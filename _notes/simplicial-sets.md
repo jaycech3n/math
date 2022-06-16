@@ -162,6 +162,9 @@ Requiring fillers of all such horns is tantamount to saying that every arrow in 
 A similar thing holds for $\Lambda^2_2$.
 
 The nerve construction is a functor $N \colon \mathrm{Cat} \rightarrow \mathrm{sSet}$.
+(To be continued.)
+
+{% todo Cite Antolı́n Camarena (A Whirlwind Tour...) and Rasekh (Intro to complete Segal spaces) %}
 
 
 ### References
