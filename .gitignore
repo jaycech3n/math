@@ -1,5 +1,7 @@
-_site
 bak
-.antex-cache
 *.bak
 *.code-workspace
+.antex-cache
+_site
+_tex/*.log
+_tex/*.aux

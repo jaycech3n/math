@@ -1,9 +1,12 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper, 11pt]{article}
 
 \usepackage[top=2.5cm, bottom=3cm]{geometry}
 
 \usepackage{amsmath, amssymb, mathtools}
 
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\unit}{\mathbf{1}}
+\newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\Set}{\mathrm{Set}}
 \newcommand{\Mono}{\mathrm{Mono}}
 \newcommand{\Sub}{\mathrm{Sub}}
@@ -84,18 +87,18 @@ Such an isomorphism class is a subobject.
 \end{eg}
 
 \begin{defn}
-    A \emph{subobject classifier} in a category $\mathcal C$ with terminal $\mathbf 1$ consists of an object $\Omega$ and a mono $\top \colon \mathbf 1 \rightarrow \Omega$,
+    A \emph{subobject classifier} in a category $\mathcal C$ with terminal $\unit$ consists of an object $\Omega$ and a mono $\top \colon \unit \rightarrow \Omega$,
     such that any mono arises as the pullback of $\top$ along a unique arrow into $\Omega$.
 \end{defn}
 
-Explicitly: for any $X \in \mathcal C$ and mono $m \colon S \rightarrowtail X$, there's a unique \emph{characteristic map} $\chi_S \colon X \rightarrow \Omega$ making
+Explicitly: for any $X \in \mathcal C$ and mono $m \colon S \rightarrowtail X$, there's a unique \emph{characteristic} or \emph{classifying map} $\chi_S \colon X \rightarrow \Omega$ making
 \[
 \begin{tikzcd}
     S \ar[dr, phantom,
           "\usebox\pullback",
           very near start]
       \ar[d, tail, swap, "m"]
-      \ar[r, "!"]             & \mathbf 1 \ar[d, tail, "\top"] \\
+      \ar[r, "!"]             & \unit \ar[d, tail, "\top"] \\
     X \ar[r, dashed, swap, "\chi_S"]  & \Omega
 \end{tikzcd}
 \]
@@ -109,7 +112,7 @@ a pullback.
             "\usebox\pullback",
             very near start]
         \ar[d, tail]
-        \ar[r, "!"]             & \mathbf 1 \ar[d, tail, "\top"] \\
+        \ar[r, "!"]             & \unit \ar[d, tail, "\top"] \\
         X \ar[r, dashed, swap, "\chi_S"]  & \Omega
     \end{tikzcd}
     \]
@@ -120,8 +123,8 @@ a pullback.
 
 For every preorder $\lesssim$ we get a partial order by quotienting by
 \[ \sim \ \coloneqq \ (\lesssim \cap \gtrsim). \]
-Applying this to $\Mono_{\mathcal C}(X)$ gives $\Sub_{\mathcal C}(X)$, the class of subobjects of $X$ (in fact, this is a category, but we won't use this).
-So for every object $X$ we have a class $\Sub_{\mathcal C}(X)$ of subobjects of $X$.
+Applying this to $\Mono_{\mathcal C}(X)$ gives $\Sub_{\mathcal C}(X)$, the poset of subobjects of $X$.
+Forgetting the poset structure, for every object $X$ we have a class $\Sub_{\mathcal C}(X)$ of subobjects of $X$.
 This is functorial: for $X \xrightarrow{f} Y$ we have the pullback map
 \[ f^* \colon \mathcal C/Y \rightarrow \mathcal C/X \]
 which restricts to
@@ -140,21 +143,70 @@ is a (possibly large) presheaf on $\mathcal C$.
 What's the significance of all this to subobject classifiers?
 Well, the definition of a subobject classifier as
 \begin{quote}
-    ``A mono $\mathbf 1 \xrightarrow{\top} \Omega$ (representing a subobject), such that every subobject (represented by) $S \xrightarrow{m} X$ arises uniquely as a pullback of $\top$''     
+    ``A mono $\unit \xrightarrow{\top} \Omega$ (representing a subobject), such that every subobject (represented by) $S \xrightarrow{m} X$ arises uniquely as a pullback of $\top$''
 \end{quote}
-amounts to saying that
-\[ \hom(X , \Omega) \cong \Sub_{\mathcal C}(X) \]
-as classes---and furthermore, by properties of pullback, this isomorphism ends up being natural in $X$.
+amounts to saying that there is a bijection
+\[ \Hom(X , \Omega) \cong \Sub_{\mathcal C}(X). \]
+Furthermore, by properties of pullback, this isomorphism ends up being natural in $X$.
 That is, the (target of the) subobject classifier $\Omega$ is a representing object for the subobject functor.
-The converse is also true.
+In fact, the converse is also true.
 
 \begin{prop}[Proposition 1, SGL I\S3]
     A locally small category $\mathcal C$ with terminal object and ``enough'' pullbacks has a subobject classifier if and only if
     \[ \Sub_{\mathcal C} \colon \mathcal C^{op} \rightarrow \Set \]
     is representable.
 \end{prop}
+
 \begin{proof}
-    In meeting. Maybe I'll type it up later.
+\noindent ($\Rightarrow$)
+Let $\unit \xrightarrow{\top} \Omega$ be a subobject classifier for $\mathcal C$.
+We claim that $\Omega$ is a representing object for $\Sub_{\mathcal C}$.
+Firstly, for any $X \in \mathcal C$ the map
+\begin{align*}
+    \varphi \colon \Hom(X , \Omega) & \rightarrow \Sub_{\mathcal C}(X) \\
+    f & \mapsto [f^*\top]
+\end{align*}
+that sends $f$ to the subobject represented by $f^*\top$ is a bijection, since, by the universal property of $\Omega$, $f$ is the unique preimage of $[f^*\top]$ under $\varphi$.
+
+One also easily checks that $\varphi$ is also natural: for any $g \colon X \rightarrow Y$ in $\mathcal C$, the commutativity of
+\[
+\begin{tikzcd}
+    \Hom(Y, \Omega) \ar[d, swap, "-\circ g"]
+                    \ar[r, "\varphi"]        & \Sub_{\mathcal C}(Y) \ar[d, "g^*"] \\
+    \Hom(X, \Omega) \ar[r, swap, "\varphi"]  & \Sub_{\mathcal C}(X)
+\end{tikzcd}
+\]
+boils down to the fact that for any $k$, $g^*(f^*k)$ is isomorphic to $(f \circ g)^*k$ in $\mathcal C/X$.
+
+($\Leftarrow$)
+Conversely, assume that $\Omega$ is a representing object for $\Sub_{\mathcal C}$ via a natural isomorphism
+\[ \psi \colon \Sub_{\mathcal C} \xrightarrow{\cong} \Hom(-,\Omega). \]
+Define our candidate ``true'' subobject, represented by some mono
+\[ \top \colon \Omega^\prime \rightarrowtail \Omega, \]
+to be the correspondent of $\id_\Omega$ under $\psi$, i.e.\ $[\top] \coloneqq \psi^{-1}(\id_\Omega)$.
+
+Now let $[m] \in \Sub_{\mathcal C}(X)$ be a subobject of $X$.
+Take its candidate characteristic map $\chi \in \Hom(X, \Omega)$ to be its correspondent under $\psi$, i.e.\
+\[ \chi \coloneqq \psi([m]). \]
+Naturality of $\psi$ means that
+\[ \id_\Omega \circ \chi = \psi([\top]) \circ \chi = \psi([\chi^*\top]), \]
+so that $m$ and $\chi^*\top$ represent the same subobject and are thus isomorphic, and so $\chi$ is an arrow along which $m$ is a pullback.
+Furthermore $\chi$ is the unique such arrow since $\psi$ is an isomorphism.
+
+Finally it remains to show that $\Omega^\prime$ is terminal.
+One easily checks that for any $X \in \mathcal C$ and $f, g \colon X \rightarrow \Omega^\prime$, the two squares
+\[
+\begin{tikzcd}
+    X \ar[d, equal] \ar[r, "f"] & \Omega^\prime \ar[d, tail, "\top"] \\
+    X \ar[r, swap, "\top \circ f"] & \Omega
+\end{tikzcd}
+\qquad
+\begin{tikzcd}
+    X \ar[d, equal] \ar[r, "g"] & \Omega^\prime \ar[d, tail, "\top"] \\
+    X \ar[r, swap, "\top \circ g"] & \Omega
+\end{tikzcd}
+\]
+are pullbacks, so that $\top \circ f = \top \circ g$ by uniqueness of the bottom arrows, and hence $f = g$ by monocity of $\top$.
 \end{proof}
 
 \begin{corollary}
@@ -165,4 +217,19 @@ The converse is also true.
     Subobject classifiers are unique up to isomorphism.
 \end{corollary}
 
+\newpage
+
+\section*{Addendum}
+
+In the meeting Elisabeth pointed out that $\Sub_\Set$ is the contravariant powerset functor, whose action on maps is to take $f \colon X \rightarrow Y$ to the map $\mathcal P(Y) \rightarrow \mathcal P(X)$ that sends $A \subseteq Y$ to the preimage $f^{-1}(A) \subseteq X$.
+
+There is also the \emph{covariant} powerset functor that sends $f \colon X \rightarrow Y$ to the \emph{direct image} map
+\begin{align*}
+    \mathcal P(X) & \rightarrow \mathcal P(Y) \\
+    A & \mapsto f(A).
+\end{align*}
+It should be possible to generalize this to arbitrary toposes using the (regular) epi-mono factorization.
+We'll possibly discuss this in the next meeting.
+
 \end{document}
+ 
