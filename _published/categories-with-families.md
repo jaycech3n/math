@@ -36,7 +36,7 @@ A *category with families (CwF)* {% tex %}$(\mathcal C, \mathbf 1, \Ty, \Tm, \ex
 where the actions of {% tex %}$\Ty${% endtex %} and {% tex %}$\Tm${% endtex %} on morphisms $f$ are both denoted $-[f]$.
 {% enddefinition %}
 
-The terminal object {% tex %}$\ext \, \Gamma A${% endtex %} is simply a categorical packaging-up of the context extension operation, consisting of a context $\Gamma.A$, projection morphism $p_A \colon \Gamma.A \rightarrow \Gamma$ and term {% tex %}$\upsilon_A \in \Tm(\Gamma.A, A[p_A])${% endtex %}, such that the usual universal property is satisfied (see e.g. {% cite hofmann:1997:syntax-semantics %}).
+The terminal object {% tex %}$\ext \, \Gamma A${% endtex %} is simply a categorical packaging-up of the context extension operation, consisting of a context $\Gamma.A$, projection morphism $p_A \colon \Gamma.A \rightarrow \Gamma$ and term {% tex %}$\upsilon_A \in \Tm(\Gamma.A, A[p_A])${% endtex %}, such that the usual universal property is satisfied (see e.g. {% cite hofmann:97:syntax-semantics %}).
 
 The structure of a CwF can be (and is frequently) presented as an essentially/generalized algebraic theory.
 Via the usual definition of a morphism of models of EATs/GATs, one has the notion of a *CwF morphism*.
@@ -68,6 +68,10 @@ $
 $
 {% endtex %}
 {% endproposition %}
+
+{% remark %}
+This is Definition 3.15 of {% cite ahrens-lumsdaine:19:displayed-cats %}, formulated using total categories. {% todo Harmonize notation; $F^\ast$ is maybe confusing as used above. %}
+{% endremark %}
 
 {% definition Morphism of CwFs %}
 A morphism of CwFs
@@ -126,7 +130,7 @@ i.e. maps respecting the fibers of the family.
 Composition of arrows is fiberwise.
 {% enddefinition %}
 
-{% tex %}$\Fam${% endtex %} is equivalent to {% tex %}$\Set^I${% endtex %} (where $I$ is the walking arrow) via the usual family-fibration correspondence (see e.g. {% cite capriotti:2013:families-fibrations %} for a nice quick introduction):
+{% tex %}$\Fam${% endtex %} is equivalent to {% tex %}$\Set^I${% endtex %} (where $I$ is the walking arrow) via the usual family-fibration correspondence (see e.g. {% cite capriotti:13:families-fibrations %} for a nice quick introduction):
 objects of {% tex %}$\Set^I${% endtex %} are diagrams $A \rightarrow I$ of sets, and arrows
 {% tex classes: [antex,display] %}
 \begin{tikzcd}
