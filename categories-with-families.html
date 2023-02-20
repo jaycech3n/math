@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=Source+Code+Pro:wght@500&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/default.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous" onload='
+  const siteOpt = JSON.parse(&quot;{\&quot;macros\&quot;:null,\&quot;delimiters\&quot;:[{\&quot;left\&quot;:\&quot;$\&quot;,\&quot;right\&quot;:\&quot;$\&quot;,\&quot;display\&quot;:false},{\&quot;left\&quot;:\&quot;\\\\(\&quot;,\&quot;right\&quot;:\&quot;\\\\)\&quot;,\&quot;display\&quot;:false},{\&quot;left\&quot;:\&quot;\\\\[\&quot;,\&quot;right\&quot;:\&quot;\\\\]\&quot;,\&quot;display\&quot;:true}]}&quot;);
+  const pageOpt = JSON.parse(&quot;{\&quot;macros\&quot;:null}&quot;);
+  const joinOpt = { ...siteOpt, ...pageOpt, macros: { ...siteOpt.macros, ...pageOpt.macros }};
+  renderMathInElement(document.body, joinOpt);
+'></script>
+
+<style>
+  .katex { line-height: 1 !important; }
+  .antex.display { display: flex; }
+  .antex.display > img { margin: 0 auto !important; }
+</style>
+<title>Categories with families</title>
+</head>
+<body>
+  <header>
+    <nav><a href="/math">Back to index</a></nav>
+  </header>
+  <main>
+      <h1 id="categories-with-families">Categories with families</h1>
+
+<h2 class="section" id="indexed-presentation">Indexed presentation</h2>
+
+<div class="definition block" id="category-with-families">
+  <p><span class="block-label"><span class="type">definition</span><span class="desc">Category with families</span></span>
+A <em>category with families (CwF)</em> <span class="antex"><img style='margin: -0.014ex 0.229ex -0.595ex 0.0ex; height: 2.35ex; width: 18.045ex;' src="/math/antex/9bf39f9dc3b5de1b2bb0b99930cd5588.svg" /></span> consists of the following data:</p>
+  <ul>
+    <li>$\mathcal C$, a category of <em>contexts</em> and <em>substitutions</em></li>
+    <li>$\mathbf 1 \in \mathcal C$, a choice of terminal object</li>
+    <li><span class="antex"><img style='margin: -0.05ex 0.132ex -0.476ex 0.0ex; height: 2.114ex; width: 14.681ex;' src="/math/antex/cb9e7e7a8c9a3c961c373059bbf2bc27.svg" /></span></li>
+    <li><span class="antex"><img style='margin: -0.002ex 0.132ex -0.863ex 0.0ex; height: 2.737ex; width: 21.237ex;' src="/math/antex/1dadfe1829cab687fa83562d2e08af02.svg" /></span></li>
+    <li><span class="antex"><img style='margin: -0.002ex 0.229ex -1.424ex 0.0ex; height: 3.297ex; width: 74.043ex;' src="/math/antex/df605dbafaf85ff8c343f32077e97644.svg" /></span></li>
+  </ul>
+
+  <p>where the actions of <span class="antex"><img style='margin: 0.015ex 0.078ex -0.476ex 0.0ex; height: 2.049ex; width: 2.793ex;' src="/math/antex/6eebd16d30a74bdaa0d51212ff5b896d.svg" /></span> and <span class="antex"><img style='margin: 0.015ex 0.047ex 0.0ex 0.0ex; height: 1.572ex; width: 3.566ex;' src="/math/antex/d9913ec0528bd4950e92205b77a28525.svg" /></span> on morphisms $f$ are both denoted $-[f]$.</p>
+</div>
+
+<p>The terminal object <span class="antex"><img style='margin: -0.076ex 0.067ex -0.026ex 0.0ex; height: 1.689ex; width: 6.675ex;' src="/math/antex/4768a31f2c5e6c0616d6e02e88d5973b.svg" /></span> is simply a categorical packaging-up of the context extension operation, consisting of a context $\Gamma.A$, projection morphism $p_A \colon \Gamma.A \rightarrow \Gamma$ and term <span class="antex"><img style='margin: -0.014ex 0.229ex -0.595ex 0.0ex; height: 2.35ex; width: 21.367ex;' src="/math/antex/718dc63b5ce906c0366504ce4a826df8.svg" /></span>, such that the usual universal property is satisfied (see e.g. <a class="citation" href="#hofmann:97:syntax-semantics">(Hofmann, 1997)</a>).</p>
+
+<p>The structure of a CwF can be (and is frequently) presented as an essentially/generalized algebraic theory.
+Via the usual definition of a morphism of models of EATs/GATs, one has the notion of a <em>CwF morphism</em>.
+Here we state this more explicitly for our more categorical formulation.
+We use the following proposition, easily checked:</p>
+
+<div class="proposition block">
+  <p><span class="block-label"><span class="type">proposition</span></span>
+Let <span class="antex"><img style='margin: -0.05ex 0.132ex -0.051ex 0.0ex; height: 1.689ex; width: 14.121ex;' src="/math/antex/ceba34f180a4aace561e6b35443ad379.svg" /></span> be a presheaf on $\mathcal D$.
+Then any functor <span class="antex"><img style='margin: -0.05ex 0.076ex -0.056ex 0.0ex; height: 1.693ex; width: 14.263ex;' src="/math/antex/eb7392e62f47e979350051fa2afbc4a2.svg" /></span> induces a functor
+\[ \int_{\mathcal C} P \circ F \xrightarrow{F^\ast} \int_{\mathcal D} P \]
+on the categories of elements, given by “reindexing”. <span class="todo tag" data-text="—What's the standard terminology? I don't know." tabindex="0"><span>todo</span></span>
+That is,
+<span class="antex display"><img style='margin: -0.017ex 0.223ex -5.558ex 0.0ex; height: 12.277ex; width: 74.628ex;' src="/math/antex/a544a248428da09321845cb640fe6ff7.svg" /></span></p>
+</div>
+
+<div class="remark block">
+  <p><span class="block-label"><span class="type">remark</span></span>
+This is Definition 3.15 of <a class="citation" href="#ahrens-lumsdaine:19:displayed-cats">(Ahrens &amp; Lumsdaine, 2019)</a>, formulated using total categories. <span class="todo tag" data-text="—Harmonize notation; $F^\ast$ is maybe confusing as used above." tabindex="0"><span>todo</span></span></p>
+</div>
+
+<div class="definition block" id="morphism-of-cwfs">
+  <p><span class="block-label"><span class="type">definition</span><span class="desc">Morphism of CwFs</span></span>
+A morphism of CwFs
+<span class="antex display"><img style='margin: 0.017ex 0.229ex -0.595ex 0.0ex; height: 2.508ex; width: 46.031ex;' src="/math/antex/47108e52f11d7083d6cd845c7753df77.svg" /></span>
+consists of the following data:</p>
+  <ul>
+    <li>$F \colon \mathcal C \rightarrow \mathcal C^\prime$ preserving the chosen terminal objects $\mathbf 1, \mathbf 1^\prime$</li>
+    <li><span class="antex"><img style='margin: 0.017ex 0.076ex -0.68ex 0.0ex; height: 2.594ex; width: 20.953ex;' src="/math/antex/97a5bf31468eadaff4a65289c80a8837.svg" /></span>,
+a natural transformation on presheaves <span class="antex"><img style='margin: -0.05ex 0.132ex -0.056ex 0.0ex; height: 1.693ex; width: 10.132ex;' src="/math/antex/22300d95e96c524df9adc0a6e3ca7e86.svg" /></span></li>
+    <li><span class="antex"><img style='margin: -0.025ex 0.076ex -0.863ex 0.0ex; height: 2.988ex; width: 38.356ex;' src="/math/antex/909e1dd086592adb9a7af909f5c98827.svg" /></span>,
+a natural transformation on presheaves <span class="antex"><img style='margin: -0.002ex 0.132ex -0.863ex 0.0ex; height: 2.737ex; width: 15.946ex;' src="/math/antex/339fd58b20a79233a2fce7f4816beccd.svg" /></span></li>
+  </ul>
+
+  <p>such that for every $\Gamma \in \mathcal C$ and <span class="antex"><img style='margin: -0.076ex 0.1ex -0.476ex 0.0ex; height: 2.139ex; width: 8.868ex;' src="/math/antex/865cd03aea96e82f53ac41ec9cab8126.svg" /></span> the canonically induced map
+<span class="antex display"><img style='margin: 0.017ex 0.229ex -1.74ex 0.0ex; height: 3.653ex; width: 59.879ex;' src="/math/antex/ce31a9014f7b111221359097e8735d88.svg" /></span>
+(strictly) preserves the terminal objects chosen by <span class="antex"><img style='margin: 0.0ex 0.132ex -0.026ex 0.0ex; height: 1.454ex; width: 3.029ex;' src="/math/antex/b970463cb92f95b49128d97f1652ffbb.svg" /></span>, <span class="antex"><img style='margin: 0.017ex 0.038ex -0.026ex 0.0ex; height: 1.781ex; width: 3.636ex;' src="/math/antex/e7e4f1e51e226db17325ba6f1c1080d9.svg" /></span>.</p>
+</div>
+
+<p>Spelling out this last part above, this means in particular that
+<span class="antex display"><img style='margin: -0.015ex 0.178ex -4.309ex 0.0ex; height: 9.782ex; width: 22.448ex;' src="/math/antex/bfa369362bf267d301302ef2cf52b695.svg" /></span>
+and a similar equation for weakening of substitutions.</p>
+
+<div class="remark block">
+  <p><span class="block-label"><span class="type">remark</span></span>
+From the <span class="antex"><img style='margin: 0.0ex 0.132ex -0.026ex 0.0ex; height: 1.454ex; width: 3.029ex;' src="/math/antex/b970463cb92f95b49128d97f1652ffbb.svg" /></span> data of a CwF we can form a (strict) functor
+<span class="antex display"><img style='margin: -0.002ex 0.13ex -0.863ex 0.0ex; height: 2.737ex; width: 17.981ex;' src="/math/antex/bba62bf49710d05e0244b9e79a1272b3.svg" /></span>
+into the category of pullbacks of $\mathcal C$, sending $(\Gamma, A)$ to the projection $\Gamma.A \xrightarrow{p_A} \Gamma$
+and $f \colon (\Delta, A[f]) \rightarrow (\Gamma, A)$ to the unique pullback of $p_A$ along $f$.
+Uniqueness is by terminality, which also gives strictness of this functor.</p>
+</div>
+
+<h2 class="section" id="fibered-presentation">Fibered presentation</h2>
+
+<div class="definition block" id="category-of-families-of-sets">
+  <p><span class="block-label"><span class="type">definition</span><span class="desc">Category of families of sets</span></span>
+<span class="antex"><img style='margin: 0.008ex 0.047ex -0.026ex 0.0ex; height: 1.605ex; width: 4.372ex;' src="/math/antex/8e9277cbb2289fb58332d7ca1facb4a2.svg" /></span> is the category whose objects <span class="antex"><img style='margin: -0.014ex 0.078ex -0.595ex 0.0ex; height: 2.35ex; width: 6.825ex;' src="/math/antex/d68ad0f8486ee7b2fe66ae51e67e18f7.svg" /></span> are set-indexed families of sets, and whose arrows <span class="antex"><img style='margin: -0.014ex 0.061ex -0.68ex 0.0ex; height: 2.436ex; width: 18.136ex;' src="/math/antex/f54e7c0ddcf9c4f5814577fe4d3ed84c.svg" /></span> consist of pairs
+\[ \big(f \colon I \rightarrow J, (f_i \colon A_i \rightarrow B_{f(i)})_{i \in I}\big), \]
+i.e. maps respecting the fibers of the family.
+Composition of arrows is fiberwise.</p>
+</div>
+
+<p><span class="antex"><img style='margin: 0.008ex 0.047ex -0.026ex 0.0ex; height: 1.605ex; width: 4.372ex;' src="/math/antex/8e9277cbb2289fb58332d7ca1facb4a2.svg" /></span> is equivalent to <span class="antex"><img style='margin: 0.001ex 0.078ex -0.051ex 0.0ex; height: 2.174ex; width: 4.097ex;' src="/math/antex/84eab475e8475800e05836e70c6bbf0a.svg" /></span> (where $I$ is the walking arrow) via the usual family-fibration correspondence (see e.g. <a class="citation" href="#capriotti:13:families-fibrations">(Capriotti, 2013)</a> for a nice quick introduction):
+objects of <span class="antex"><img style='margin: 0.001ex 0.078ex -0.051ex 0.0ex; height: 2.174ex; width: 4.097ex;' src="/math/antex/84eab475e8475800e05836e70c6bbf0a.svg" /></span> are diagrams $A \rightarrow I$ of sets, and arrows
+<span class="antex display"><img style='margin: -0.003ex 0.166ex -7.04ex 0.0ex; height: 13.004ex; width: 37.532ex;' src="/math/antex/014d91e081b1cc5eda0e0413d7351719.svg" /></span>
+from $A \rightarrow I$ to $B \rightarrow J$ are fiber-preserving maps on the total spaces $A$, $B$.</p>
+
+<p>(To be continued.)</p>
+
+<h3 id="references">References</h3>
+
+<ol class="bibliography"><li><span id="hofmann:97:syntax-semantics">Hofmann, M. (1997). Syntax and Semantics of Dependent Types. <i>Semantics and Logics of Computation</i>, 79–130.</span></li>
+<li><span id="ahrens-lumsdaine:19:displayed-cats">Ahrens, B., &amp; Lumsdaine, P. L. F. (2019). Displayed Categories. <i>Logical Methods in Computer Science</i>, <i>Volume 15, Issue 1</i>. https://doi.org/10.23638/LMCS-15(1:20)2019</span></li>
+<li><span id="capriotti:13:families-fibrations">Capriotti, P. (2013). <i>Families and fibrations</i>. https://www.paolocapriotti.com/blog/2013/02/20/families-and-fibrations/index.html</span></li></ol>
+
+  </main>
+</body>
+</html>

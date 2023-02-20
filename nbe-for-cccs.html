@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=Source+Code+Pro:wght@500&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/default.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous" onload='
+  const siteOpt = JSON.parse(&quot;{\&quot;macros\&quot;:null,\&quot;delimiters\&quot;:[{\&quot;left\&quot;:\&quot;$\&quot;,\&quot;right\&quot;:\&quot;$\&quot;,\&quot;display\&quot;:false},{\&quot;left\&quot;:\&quot;\\\\(\&quot;,\&quot;right\&quot;:\&quot;\\\\)\&quot;,\&quot;display\&quot;:false},{\&quot;left\&quot;:\&quot;\\\\[\&quot;,\&quot;right\&quot;:\&quot;\\\\]\&quot;,\&quot;display\&quot;:true}]}&quot;);
+  const pageOpt = JSON.parse(&quot;{\&quot;macros\&quot;:null}&quot;);
+  const joinOpt = { ...siteOpt, ...pageOpt, macros: { ...siteOpt.macros, ...pageOpt.macros }};
+  renderMathInElement(document.body, joinOpt);
+'></script>
+
+<style>
+  .katex { line-height: 1 !important; }
+  .antex.display { display: flex; }
+  .antex.display > img { margin: 0 auto !important; }
+</style>
+<title>Normalization by evaluation for CCCs</title>
+</head>
+<body>
+  <header>
+    <nav><a href="/math">Back to index</a></nav>
+  </header>
+  <main>
+      <h1 id="normalization-by-evaluation-for-cccs">Normalization by evaluation for CCCs</h1>
+
+<p>In a cartesian closed category $\mathcal C$ we can interpret the simply typed $\lambda$-calculus thus:</p>
+
+<ul>
+  <li>
+    <p>Contexts $\Gamma$ and types $A$ are presented by objects <span class="antex"><img style='margin: 0.002ex 0.118ex -0.578ex 0.0ex; height: 2.318ex; width: 11.852ex;' src="/math/antex/64370efd9f1e0d9b0e0640f3f309bc9c.svg" /></span>.
+The empty context is presented by the terminal object $\mathbf 1$.</p>
+  </li>
+  <li>
+    <p>Context extension $(\Gamma, x \colon A)$ is presented by <span class="antex"><img style='margin: 0.002ex 0.261ex -0.578ex 0.0ex; height: 2.318ex; width: 9.64ex;' src="/math/antex/4d651dea88e973d4c84a8c5782c5d2db.svg" /></span>.
+A context is hence presented by any product of the presentations of its types.</p>
+  </li>
+  <li>
+    <p>Terms-in-context $(\Gamma \vdash a \colon A)$ are presented by sections
+<span class="antex display"><img style='margin: 0.002ex 0.261ex -0.578ex 0.0ex; height: 2.318ex; width: 16.639ex;' src="/math/antex/29ff3dbe7e5fc379bedb1777a4e44e5d.svg" /></span>
+of the projection <span class="antex"><img style='margin: -0.001ex 0.285ex -0.578ex 0.0ex; height: 2.811ex; width: 19.392ex;' src="/math/antex/43415083a50d08ebd7f6f539cbf5e8a5.svg" /></span>,
+or equivalently, by arrows
+<span class="antex display"><img style='margin: 0.002ex 0.261ex -0.578ex 0.0ex; height: 2.318ex; width: 10.414ex;' src="/math/antex/410e63d400e1456ecf450263b9c1ed73.svg" /></span>
+(the maps $\pi_2 \circ -$ and <span class="antex"><img style='margin: 0.002ex 0.066ex -0.574ex 0.0ex; height: 2.313ex; width: 6.642ex;' src="/math/antex/c4777d74a20e4f587a4915cf5e859b4f.svg" /></span>
+are inverse isomorphisms between sections of $\pi_1$ and <span class="antex"><img style='margin: -0.014ex 0.229ex -0.595ex 0.0ex; height: 2.35ex; width: 14.06ex;' src="/math/antex/40a9e45524a14cc496d8d641f56af956.svg" /></span>),
+so we (ab)use the same notation <span class="antex"><img style='margin: 0.002ex 0.261ex -0.578ex 0.0ex; height: 2.318ex; width: 2.901ex;' src="/math/antex/0198029d77bece19f922a202f70aa6f8.svg" /></span> for either of these presentations.</p>
+  </li>
+  <li>
+    <p>Substitution in terms is presented by composition of the appropriate arrows.
+Let $(\Gamma \vdash a \colon A)$ and $(\Gamma, x \colon A \vdash b \colon B)$ be terms in context.</p>
+    <ol>
+      <li>If these are presented as sections
+  <span class="antex display"><img style='margin: 0.018ex 0.186ex -0.578ex 0.0ex; height: 3.499ex; width: 57.855ex;' src="/math/antex/49853e5e7e49f5ea93ba00f74110e54e.svg" /></span>
+  then $(\Gamma \vdash b[a/x] \colon B)$ may also be presented as the section
+  <span class="antex display"><img style='margin: 0.002ex 0.199ex -0.578ex 0.0ex; height: 2.318ex; width: 41.9ex;' src="/math/antex/e83a87fc3bdc2c0ac1a2606a0de905db.svg" /></span></li>
+      <li>If they are instead presented by the second projections
+  <span class="antex display"><img style='margin: 0.018ex 0.186ex -0.578ex 0.0ex; height: 3.499ex; width: 35.479ex;' src="/math/antex/6516d530bd21e372134d441c2b488de6.svg" /></span>
+  then $(\Gamma \vdash b[a/x] \colon B)$ is presented by
+  <span class="antex"><img style='margin: 0.002ex 0.066ex -0.578ex 0.0ex; height: 2.318ex; width: 13.124ex;' src="/math/antex/673c6754f5ea01ad0b88edb4acdfdc3d.svg" /></span>.
+  This is just the second projection of the previous presentation (1).</li>
+    </ol>
+  </li>
+</ul>
+
+<p>The preceding discussion makes it clear that “presentation” <span class="antex"><img style='margin: 0.002ex 0.261ex -0.578ex 0.0ex; height: 2.318ex; width: 2.319ex;' src="/math/antex/65be74d1b8d7b83c3279f0095e7ed88c.svg" /></span> is a <em>relation</em> instead of a function.
+Different categorical presentations of the same syntactic entities, however, give equivalent data, in the sense that</p>
+
+  </main>
+</body>
+</html>

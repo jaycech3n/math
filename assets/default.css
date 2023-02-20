@@ -1,0 +1,405 @@
+/******************************************************************************
+Fonts
+******************************************************************************/
+
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/Atkinson-Hyperlegible-400.woff2) format('woff2'),
+       url(fonts/Atkinson-Hyperlegible-400.woff)  format('woff')
+}
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  font-style: italic;
+  font-weight: normal;
+  src: url(fonts/Atkinson-Hyperlegible-400i.woff2) format('woff2'),
+       url(fonts/Atkinson-Hyperlegible-400i.woff)  format('woff')
+}
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  font-style: normal;
+  font-weight: bold;
+  src: url(fonts/Atkinson-Hyperlegible-700.woff2) format('woff2'),
+       url(fonts/Atkinson-Hyperlegible-700.woff)  format('woff')
+}
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  font-style: italic;
+  font-weight: bold;
+  src: url(fonts/Atkinson-Hyperlegible-700i.woff2) format('woff2'),
+       url(fonts/Atkinson-Hyperlegible-700i.woff)  format('woff')
+}
+
+
+/******************************************************************************
+Colors
+******************************************************************************/
+
+:root {
+  --font-color: #263543;
+  --bg-color: #fff;
+  --color1: #ffdc00;
+  --color2: #164fd1;
+  --color3: #00a6fb;
+  --color4: #47a8bd;
+  --attn-color: #c2095a;
+  --darken-color: #12121266;
+  --lighten-color: #ffffff33;
+}
+
+
+/******************************************************************************
+Top-level defaults
+******************************************************************************/
+
+html {
+  height: 100%;
+  width: 100%
+}
+
+body {
+  margin: 0;
+  padding: 2em 0 0 0;
+
+  display: flex;
+  flex-direction: row;
+
+  font-family: "Atkinson-Hyperlegible", sans-serif;
+  font-size: 16px;
+  color: var(--font-color);
+
+  background-color: var(--bg-color)
+}
+
+a, .tag {
+  text-decoration: none;
+  transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s
+}
+
+body h1, h2, h3 {font-family: "Libre Baskerville", serif}
+
+code, pre {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.9em;
+}
+
+
+/******************************************************************************
+"Header" sidebar
+******************************************************************************/
+
+header {
+  min-width: 16.67%;
+  padding-right: 8ex
+}
+
+header h1 {
+  position: relative;
+  margin-left: 33%;
+  font-size: 1.8em;
+  padding-top: 0;
+  margin-top: 2rem;
+}
+
+nav {
+  position: relative;
+  margin-left: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+
+nav a {
+  text-transform: uppercase;
+  color: var(--color2);
+  padding: 2px 4px 0px 4px
+}
+
+nav a#home {font-size: 18px}
+
+nav a:hover,
+nav a:focus,
+nav a:active {
+  color: var(--bg-color);
+  background-color: var(--color2);
+  border-radius: 2px;
+  transform: scale(1.05);
+  box-shadow: 2px 2px 4px var(--darken-color)
+}
+
+nav a + a {margin-top: 4px}
+
+
+/******************************************************************************
+Main content
+******************************************************************************/
+
+main {
+  max-width: 90ex;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 2ex;
+  padding-bottom: 4em;
+  line-height: 1.5em
+}
+
+main a {
+  color: var(--font-color);
+  box-shadow: 0px 3px 4px -4px var(--darken-color)
+}
+
+main a:hover,
+main a:focus,
+main a:active {
+  border-radius: 2px;
+  box-shadow: 2px 2px 4px var(--darken-color)
+}
+
+main h1 {
+  font-size: 2em;
+  line-height: 1em;
+  margin-top: 0;
+  margin-bottom: 1em
+}
+main h2 {font-size: 1.4em}
+main h3 {font-size: 1.1em}
+
+p + h2,
+div.block + h2 {margin-top: 1.5em}
+
+p + ul {
+  margin-top: -0.5em;
+  margin-bottom: 0;
+  padding-left: 4ex;
+}
+
+ul.notes {
+  margin-top: 1em;
+  padding: 0;
+  list-style: none
+}
+
+ul.notes li + li {margin-top: 0.25em}
+
+ul.notes li::before {
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  content: "🙝";
+  margin-right: 2ex;
+}
+
+
+/******************************************************************************
+Reference lists
+******************************************************************************/
+
+h3#references {
+  margin-top: 2.25em;
+  padding-top: 0.75em;
+  box-shadow: 0px -2px 4px -4px var(--darken-color)
+}
+
+
+/******************************************************************************
+Math styling
+******************************************************************************/
+
+.katex {font-size: 1.1em !important}
+
+.katex-display,
+.antex.display {
+  margin-top: 0.5em;
+  margin-bottom: 1em
+}
+
+.katex-display .tag {visibility: hidden}
+
+
+/******************************************************************************
+Section labels
+******************************************************************************/
+
+.section > .numbering {margin-right: 1ex}
+.section > .numbering::after {content: "."}
+
+
+/******************************************************************************
+Theorem blocks
+******************************************************************************/
+
+.block .type {
+  font-weight: bold;
+  font-style: normal;
+  text-transform: capitalize;
+}
+
+.block .numbering {
+  margin-left: 0.5ex;
+  font-weight: bold;
+  font-style: normal
+}
+
+.block .desc {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.block .desc::first-letter {
+  text-transform: capitalize;
+}
+
+.block .desc::before {
+  content: " (";
+  font-style: normal;
+}
+
+.block .desc::after {
+  content: ")";
+  font-style: normal;
+}
+
+.block-label::after {
+  content: ".";
+  font-weight: bold;
+  font-style: normal
+}
+
+.theorem.block,
+.lemma.block,
+.proposition.block {font-style: italic}
+
+.theorem.block,
+.lemma.block,
+.proposition.block p em {font-style: normal}
+
+.proof.block .type {
+  font-style: italic;
+  font-weight: normal
+}
+
+.proof.block .desc::before {content: none}
+.proof.block .desc::after {content: none}
+.proof.block .block-label::after {content: none}
+
+.proof.block p:last-child {margin-bottom: 0}
+
+.proof.block::after {
+  content: "❒";
+  font-weight: bold;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  position: relative;
+  margin-left: 82ex
+}
+
+
+/******************************************************************************
+Label blocks
+******************************************************************************/
+
+.labeled.block {margin: 1em 0}
+.labeled.block .type {display: none}
+.labeled.block .numbering {font-weight: normal}
+.labeled.block .numbering::before {content: "("}
+.labeled.block .numbering::after {content: ")"}
+.labeled.block .block-label::after {content: none}
+
+.labeled.block p {margin: 0}
+.labeled.block .katex-display {margin: 0}
+.labeled.block .block-label {
+  float: right;
+  position: relative;
+  top: 0
+}
+
+
+/******************************************************************************
+In-text reference labels
+******************************************************************************/
+
+/* .ref::before {content: "("}
+.ref::after {content: ")"} */
+
+
+/******************************************************************************
+Misc. specific styling
+******************************************************************************/
+
+.tag {
+  padding: 3px 4px;
+  border-radius: 4px;
+  color: var(--bg-color);
+  background-color: var(--font-color);
+  vertical-align: middle;
+  box-shadow: 0px 3px 4px -4px var(--darken-color);
+  font-size: 0.75em
+}
+p .tag {
+  position: relative;
+  bottom: 0px;
+}
+
+.tag.todo {
+  font-style: normal;
+  font-weight: bold;
+  background-color: var(--attn-color);
+  box-shadow: 0px 4px 4px -4px var(--attn-color);
+  opacity: 33%
+}
+
+.tag.todo > span {text-transform: uppercase}
+
+.tag.todo:hover,
+.tag.todo:focus,
+.tag.todo:active {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.tag.todo:hover::after,
+.tag.todo:focus::after,
+.tag.todo:active::after {
+  content: attr(data-text);
+}
+
+
+/******************************************************************************
+Responsive
+******************************************************************************/
+
+.show-on-responsive {display: none}
+
+@media screen and (max-width: 960px) {
+  body {
+    padding-top: 1em;
+    flex-direction: column
+  }
+  ol, ul {padding-left: 5ex}
+  header, main {padding-left: 3ex}
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding-right: 5ex;
+  }
+  nav {
+    margin-left: 0;
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: left
+  }
+  nav a {margin-right: 1ex}
+  main h1 {margin-top: 1em}
+  .proof.block::after {margin-left: 97.5%}
+}
+
+@media screen and (max-width: 800px) {
+  .show-on-responsive {display: inline}
+  .hide-on-responsive {display: none}
+  header {padding-right: 2ex}
+  header, main {padding-left: 2ex}
+}

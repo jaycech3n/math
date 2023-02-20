@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=Source+Code+Pro:wght@500&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/default.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous" onload='
+  const siteOpt = JSON.parse(&quot;{\&quot;macros\&quot;:null,\&quot;delimiters\&quot;:[{\&quot;left\&quot;:\&quot;$\&quot;,\&quot;right\&quot;:\&quot;$\&quot;,\&quot;display\&quot;:false},{\&quot;left\&quot;:\&quot;\\\\(\&quot;,\&quot;right\&quot;:\&quot;\\\\)\&quot;,\&quot;display\&quot;:false},{\&quot;left\&quot;:\&quot;\\\\[\&quot;,\&quot;right\&quot;:\&quot;\\\\]\&quot;,\&quot;display\&quot;:true}]}&quot;);
+  const pageOpt = JSON.parse(&quot;{\&quot;macros\&quot;:{\&quot;\\\\Syn\&quot;:\&quot;\\\\mathrm{Syn}\&quot;,\&quot;\\\\Type\&quot;:\&quot;\\\\mathrm{Type}\&quot;}}&quot;);
+  const joinOpt = { ...siteOpt, ...pageOpt, macros: { ...siteOpt.macros, ...pageOpt.macros }};
+  renderMathInElement(document.body, joinOpt);
+'></script>
+
+<style>
+  .katex { line-height: 1 !important; }
+  .antex.display { display: flex; }
+  .antex.display > img { margin: 0 auto !important; }
+</style>
+<title>Syntax in model in syntax</title>
+</head>
+<body>
+  <header>
+    <nav><a href="/math">Back to index</a></nav>
+  </header>
+  <main>
+      <h1 id="syntax-in-model-in-syntax">Syntax in model in syntax</h1>
+
+<p>This short stub is an exercise in points of view.
+It briefly sketches something almost tautological—and yet important, see for instance <a href="http://nlab-pages.s3.us-east-2.amazonaws.com/nlab/show/categorical%20model%20of%20dependent%20types#StandInForSyntax">this discussion</a>—namely that</p>
+
+<div class="theorem block" id="almost-tautology">
+  <p><span class="block-label"><span class="type">theorem</span><span class="numbering" id="1">1</span><span class="desc">Almost-tautology</span></span>
+The category of types of a type theory is equivalent to its syntactic display map category.</p>
+</div>
+
+<p>In what follows we fix a Martin-Löf type theory $T$ with $\Pi$, $\Sigma$ with definitional eta, and unit type <span class="antex"><img style='margin: -0.055ex 0.213ex 0.0ex 0.0ex; height: 1.551ex; width: 1.187ex;' src="/math/antex/3146ad1bed3a64557308955ee427e75f.svg" /></span>.
+$T$ is (at first) meant to be treated syntactically, i.e. from a traditional proof theorist’s point of view, in terms of its judgments, axioms and logical rules.</p>
+
+<div class="definition block" id="syntactic-display-map-category">
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="2">2</span><span class="desc">Syntactic display map category</span></span>
+The <em>syntactic display map category $\Syn$</em> of $T$ has contexts of $T$, formed from the empty context and context extension, as objects, and substitutions between contexts as arrows.
+Its <em>display maps</em> are the context projections
+$\Gamma, A \xtwoheadrightarrow{p_A} \Gamma$.</p>
+</div>
+
+<p>Pullbacks of display maps
+$\Gamma, A \xtwoheadrightarrow{p_A} \Gamma$
+along
+$f \colon \Delta \rightarrow \Gamma$
+are again display maps
+\[ \Delta, A[f/\Gamma] \xtwoheadrightarrow{p_A[f/\Gamma]} \Delta \]
+where $A[t/\Gamma]$ denotes the simultaneous substitution
+$A[t_1/x_1, \dotsc, t_n/x_n]$
+for
+$\Gamma = (x_1 \colon \Gamma_1, \dotsc, x_n \colon \Gamma_n)$.</p>
+
+<div class="definition block" id="category-of-types">
+  <p><span class="block-label"><span class="type">definition</span><span class="numbering" id="3">3</span><span class="desc">Category of types</span></span>
+The <em>category of types</em> $\Type$ of $T$ is the category of closed types of $T$ and functions between them.</p>
+</div>
+
+<p>The idea is that while definition (<a href="#syntactic-display-map-category" class="ref">2</a>) might seem more “external” or “semantic” in flavor and definition (<a href="#category-of-types" class="ref">3</a>) more “internal” or “syntactically”-flavored, they are actually the same thing.</p>
+
+<div class="proof block">
+  <p><span class="block-label"><span class="type">proof</span></span> (of Theorem <a href="#almost-tautology" class="ref">1</a>).
+Using a suggestive overloading of notation, we have the equivalences
+\[ \Syn \xrightleftarrows[\centerdot,]{\tilde\Sigma} \Type \]
+where $\tilde\Sigma$ is defined inductively on objects by
+<span class="antex display"><img style='margin: -0.0ex 0.238ex -4.308ex 0.0ex; height: 9.76ex; width: 21.243ex;' src="/math/antex/30f5a809acf2cec88baa410bdaf46f1e.svg" /></span>
+and on arrows $f \colon \Gamma \rightarrow \Delta$ by
+<span class="antex display"><img style='margin: -0.0ex 0.241ex -2.858ex 0.0ex; height: 6.878ex; width: 28.435ex;' src="/math/antex/a2f16a6adda1a2b9eac8a352fb538382.svg" /></span>
+where $f = (\Gamma \vdash f_1 \colon \Delta_1, \dotsc, f_m \colon \Delta_m)$.
+Note that we’re implicitly left-associative for convenience.</p>
+
+  <p>The inverse $\centerdot, \colon \Type \rightarrow \Syn$ is given by
+<span class="antex display"><img style='margin: -0.084ex 0.221ex -2.555ex 0.0ex; height: 6.355ex; width: 37.174ex;' src="/math/antex/373422e1dd8914bd29b832dbf5dd8616.svg" /></span></p>
+
+  <p>Now we can check that $(\tilde\Sigma \circ \centerdot,)$ and $(\centerdot, \circ \tilde\Sigma)$ are both naturally isomorphic to the identity functors.
+For the latter, use
+<span class="antex display"><img style='margin: -0.0ex 0.241ex -2.858ex 0.0ex; height: 6.878ex; width: 38.639ex;' src="/math/antex/4134583b74005bd3d64ac7fb8ca8af9f.svg" /></span>
+and observe that definitional eta is needed for this to be an isomorphism in $\Syn$.</p>
+</div>
+
+<p>The purpose of this discussion is not to get bogged down in metatheoretic minutiae about syntax, but rather to gain an understanding of the <em>internal language</em> approach, such that one may switch back and forth between the internal syntax and the external categorical/model-theoretic point of view when performing constructions in type theory.</p>
+
+
+  </main>
+</body>
+</html>
